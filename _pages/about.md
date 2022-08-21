@@ -4,4 +4,4 @@ title: About Me
 permalink: /about/
 ---
 
-This site is being updated with Data Science Notes Weekely.
+I am an M.tech Student at IIT Hyderabad. 
