@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -128,6 +128,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Boole's-inequality">Boole&#39;s inequality </a></li>
 <li class="toc-entry toc-h3"><a href="#Example">Example </a></li>
 <li class="toc-entry toc-h3"><a href="#Conditional-Probability">Conditional Probability </a></li>
+<li class="toc-entry toc-h3"><a href="#Corollary">Corollary </a></li>
 </ul>
 </li>
 </ul><!--
@@ -257,12 +258,21 @@ $p\left\lbrace E_1 \cup E_2 \cup E_3 \cup \ldotp \ldotp \ldotp \cup E_n \right\r
 <ul>
 <li>For any events $E_1 ,E_2 ,\ldotp \ldotp \ldotp E_n$<br>
 $P\left\lbrace \bigcup_{i=1}^n E_i \right\rbrace \le \sum_{i=1}^n P\left\lbrace E_i \right\rbrace$<br>
-<div class="flash flash-warn">
-    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
-    <strong>Important: </strong>if $E\subseteq F$, then $P\left\lbrace F-E\right\rbrace =P\left\lbrace F\right\rbrace -P\left\lbrace E\right\rbrace$
-</div>
+<br>
 </li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>if $E\subseteq F$, then $P\left\lbrace F-E\right\rbrace =P\left\lbrace F\right\rbrace -P\left\lbrace E\right\rbrace$
+</div>
 
 </div>
 </div>
@@ -288,14 +298,51 @@ $P\left\lbrace E\right\rbrace =\frac{|E|}{|\Omega |}=\frac{365!}{\left(365-n\rig
 <a class="anchor" href="#Conditional-Probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional Probability<a class="anchor-link" href="#Conditional-Probability"> </a>
 </h3>
 <p>Let $F$ be an Event with $P\left\lbrace F\right\rbrace &gt;0$ . then the conditional probability $E$ of given $F$  is defined  as:
-$P\left\lbrace E|F\right\rbrace :=\frac{P\left\lbrace E\cap F\right\rbrace }{P\left\lbrace F\right\rbrace }$ , this can be interpreted as below:<br>
-"In what proportion of case in $F$ will also $E$ occur?" or "How does the probability of both $E$ and $F$ compare to the probability  of $F$ only?"<br>
-conditional probability is a proper probability and it satisfies  the axioms:<br></p>
+$P\left\lbrace E|F\right\rbrace :=\frac{P\left\lbrace E\cap F\right\rbrace }{P\left\lbrace F\right\rbrace }$ <br>
+</p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>Conditional Probability can be interpreted as:<br>"In what proportion of case in $F$ will also $E$ occur?" or "How does the probability of both $E$ and $F$ compare to the probability  of $F$ only?"<br>
+</div>
+conditional probability is a proper probability and it satisfies  the axioms:<br>
 <ol>
 <li>The conditional probability of any event is non-negative  :$P\left\lbrace E|F\right\rbrace \ge 0$</li>
 <li>The conditional probability if the sample space is one :$P\left\lbrace \Omega |F\;\right\rbrace =1$</li>
 <li>For any finitely or countably infinitely many manually exclusive events $E_{1,} E_2 ,\ldotp \ldotp \ldotp$ , $P\left\lbrace {\bigcup_{i\;} E_{i\;} |F}_{\;} \right\rbrace =\sum_i P\left\lbrace E_i |F\right\rbrace \;$</li>
 </ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Corollary">
+<a class="anchor" href="#Corollary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Corollary<a class="anchor-link" href="#Corollary"> </a>
+</h3>
+<ul>
+<li>$P\left\lbrace E^c |F\right\rbrace =1-P\left\lbrace E|F\right\rbrace$</li>
+<li>$P\left\lbrace \phi |F\right\rbrace =0$</li>
+<li>$P\left\lbrace E|F\right\rbrace =1-P\left\lbrace E^c |F\right\rbrace \le 1$</li>
+<li>$P\left\lbrace \left(E\cup G\right)|F\right\rbrace =P\left\lbrace E|F\right\rbrace +P\left\lbrace G|F\right\rbrace -P\left\lbrace E\cap F|F\right\rbrace$<br>
+proof:<br>
+$\begin{array}{l}
+P\left\lbrace \left(E\cup G\right)|F\right\rbrace =\frac{P\left\lbrace \left(E\cup G\right)\cap F\right\rbrace }{P\left\lbrace F\right\rbrace }=\frac{P\left\lbrace \left(E\cap F\right)\cup \left(G\cap F\right)\right\rbrace }{P\left\lbrace F\right\rbrace }\\
+=\frac{P\left(E\cap F\right)+P\left(G\cap F\right)-P\left\lbrace \left(E\cap F\right)\cap \;\left(G\cap F\right)\right\rbrace }{P\left\lbrace F\right\rbrace }=\frac{P\left(E\cap F\right)+P\left(G\cap F\right)-P\left\lbrace E\cap G\cap F\right\rbrace }{P\left\lbrace F\right\rbrace }\\
+=P\left\lbrace E|F\right\rbrace +P\left\lbrace G|F\right\rbrace -P\left\lbrace E\cap F|F\right\rbrace 
+\end{array}$</li>
+<li>if $E\subseteq G$ then $P\left\lbrace \left(G-E\right)|F\right\rbrace =P\left\lbrace G|F\right\rbrace -P\left\lbrace E|F\right\rbrace$<br>
+proof:<br>
+$\begin{array}{l}
+P\left\lbrace G|F\right\rbrace -P\left\lbrace E|F\right\rbrace =\frac{\;P\left\lbrace G\cap F\right\rbrace }{P\left\lbrace \mathrm{F}\right\rbrace }-\frac{\;P\left\lbrace E\cap F\right\rbrace }{P\left\lbrace \mathrm{F}\right\rbrace }\\
+=\frac{P\left\lbrace \left(G\cap F\right)-\left(E\cap F\right)\right\rbrace \;}{P\left\lbrace \mathrm{F}\right\rbrace }=\frac{P\left\lbrace \left(G\cap F\right)\cap {\left(E\cap F\right)}^c \right\rbrace \;}{P\left\lbrace \mathrm{F}\right\rbrace }\\
+=\frac{P\left\lbrace \left(G\cap F\right)\cap {\left(E^{c\;} \cup F^{c\;} \right)}^{\;} \right\rbrace \;}{P\left\lbrace \mathrm{F}\right\rbrace }=\frac{P\left\lbrace G\cap \left(F\cap {\left(E^{c\;} \cup F^{c\;} \right)}^{\;} \right)\right\rbrace \;}{P\left\lbrace \mathrm{F}\right\rbrace }\\
+=\frac{P\left\lbrace G\cap \left({\left({F\cap \;E}^{c\;} \right)\cup \left({F\cap \;F}^{c\;} \right)}^{\;} \right)\right\rbrace \;}{P\left\lbrace \mathrm{F}\right\rbrace }=\frac{P\left\lbrace G\cap {F\cap \;E}^{c\;} \right\rbrace \;}{P\left\lbrace \mathrm{F}\right\rbrace }\\
+=\frac{P\left\lbrace G\cap {\;E}^{c\;} \cap F\right\rbrace \;}{P\left\lbrace \mathrm{F}\right\rbrace }=\frac{P\left\lbrace \left(G-{\;E}^{\;} \right)\cap F\right\rbrace \;}{P\left\lbrace \mathrm{F}\right\rbrace }=P\left\lbrace \left(G-E\right)|F\right\rbrace 
+\end{array}$<br>
+<img src="/MDS-IIT/images/copied_from_nb/CS6660_images/1.jpg" alt="">
+</li>
+</ul>
 
 </div>
 </div>
