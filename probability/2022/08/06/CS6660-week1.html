@@ -180,8 +180,15 @@ window.onload = wrap_img;
 <h3 id="The-Union-and-intersection">
 <a class="anchor" href="#The-Union-and-intersection" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Union and intersection<a class="anchor-link" href="#The-Union-and-intersection"> </a>
 </h3>
-<p>The union $E\cup F\;$ of events $E$ and $F$ always means $E$ OR $F$ , The intersection $E\cap F$ of events $E$ and $F$ always means $E$ AND $F$ <br>
-The union $\bigcup_i E_{i\;}$ of events $E_{i\;\;}$ always means at least one of the $E_i$'s, The intersection $\bigcap_i E_i$ of events $E_{i\;}$ always means each of the $E_i$'s</p>
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>The union $E\cup F\;$ of events $E$ and $F$ always means $E$ OR $F$ , The intersection $E\cap F$ of events $E$ and $F$ always means $E$ AND $F$ <br>
+</div>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>The union $\bigcup_i E_{i\;}$ of events $E_{i\;\;}$ always means at least one of the $E_i$’s, The intersection $\bigcap_i E_i$ of events $E_{i\;}$ always means each of the $E_i$’s
+</div>
 
 </div>
 </div>
@@ -204,30 +211,30 @@ The union $\bigcup_i E_{i\;}$ of events $E_{i\;\;}$ always means at least one of
 <a class="anchor" href="#Simple-Properties-of-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Properties of events<a class="anchor-link" href="#Simple-Properties-of-events"> </a>
 </h3>
 <ul>
-<li>commutativity: 
-$$\begin{array}{l}
+<li>commutativity: <br>
+$\begin{array}{l}
 E\cup F=F\cup E\\
 E\cap F=F\cap E
-\end{array}$$</li>
-<li>Associativity:
-$$\begin{array}{l}
+\end{array}$</li>
+<li>Associativity: <br>
+$\begin{array}{l}
 E\cup \left(F\cup G\right)=\left(E\cup F\right)\cup G=E\cup F\cup G\\
 E\cap \left(F\cap G\right)=\left(E\cap F\right)\cap G=E\cap F\cap G
-\end{array}$$</li>
-<li>Distributivity:
-$$\begin{array}{l}
+\end{array}$</li>
+<li>Distributivity: <br>
+$\begin{array}{l}
 \left(E\cup F\right)\cap G=\left(E\cap G\right)\cup \left(F\cap G\right)\\
 \left(E\cap F\right)\cup G=\left(E\cup G\right)\cap \left(F\cup G\right)\;
-\end{array}$$</li>
-<li>De Morgan's Law:
-$$\begin{array}{l}
+\end{array}$</li>
+<li>De Morgan's Law: <br>
+$\begin{array}{l}
 {\left(E\cup F\right)}^c =E^{c\;} \cap F^{c\;} \\
 {\left(E\cap F\right)}^{c\;} =E^c \cup F^c 
-\end{array}$$
-$$\begin{array}{l}
+\end{array}$
+$\begin{array}{l}
 {\left({\bigcup_{\;\;} }_i E_{i\;} \right)}^c ={\bigcap_{\;} }_i E_{i\;}^{c\;} \\
 {\left({\bigcap_{\;} }_i E_{i\;} \right)}^{c\;} ={\bigcup_{\;} }_i E_i^{c\;} 
-\end{array}$$</li>
+\end{array}$</li>
 </ul>
 
 </div>
@@ -243,10 +250,8 @@ $$\begin{array}{l}
 <ol>
 <li>The probability of any event is non-negative : $P\left\lbrace E\right\rbrace \ge 0$</li>
 <li>The probability if the sample space is one : $P\left\lbrace \Omega \;\right\rbrace =1$</li>
-<li>For any finitely or countably infinitely many manually exclusive events $E_{1,} E_2 ,\ldotp \ldotp \ldotp$
-
-$$P\left\lbrace {\bigcup_{i\;} E_{i\;} }_{\;} \right\rbrace =\sum_i P\left\lbrace E_i \right\rbrace \;$$
-</li>
+<li>For any finitely or countably infinitely many manually exclusive events $E_{1,} E_2 ,\ldotp \ldotp \ldotp$ , 
+$P\left\lbrace {\bigcup_{i\;} E_{i\;} }_{\;} \right\rbrace =\sum_i P\left\lbrace E_i \right\rbrace \;$</li>
 </ol>
 
 </div>
@@ -261,10 +266,8 @@ $$P\left\lbrace {\bigcup_{i\;} E_{i\;} }_{\;} \right\rbrace =\sum_i P\left\lbrac
 <p>Inclusion-exclusion principle: <br>
 For any events $E$ and $F$, $P\left\lbrace E\cup F\right\rbrace =P\left\lbrace E\right\rbrace +P\left\lbrace F\right\rbrace -P\left\lbrace E\cap F\right\rbrace$ <br>
 For any events $E$,  $F$ and $G$, $P\left\lbrace E\cup F\cup G\right\rbrace =P\left\lbrace E\right\rbrace +P\left\lbrace F\right\rbrace +P\left\lbrace G\right\rbrace -P\left\lbrace E\cap F\right\rbrace -P\left\lbrace E\cap G\right\rbrace -P\left\lbrace F\cap G\right\rbrace +P\left\lbrace E\cap F\cap G\right\rbrace$<br>
-Generally:
-
-$$p\left\lbrace E_1 \cup E_2 \cup E_3 \cup \ldotp \ldotp \ldotp \cup E_n \right\rbrace =\sum_{1\le i\le n} P\left\lbrace E_i \right\rbrace -\sum_{1\le i_1 \le i_2 \le n} P\left\lbrace E_{i_1 } \cap E_{i_2 } \right\rbrace +\sum_{1\le i_1 \le i_2 \le i_{3\;} \le n} \left\lbrace P\left\lbrace E_{i_1 } \cap E_{i_2 } \cap E_{i_3 } \right\rbrace \right\rbrace -\ldotp \ldotp \ldotp \;+{\left(-1\right)}^{n+1} P\left\lbrace E_1 \cap E_2 \cap E_3 \right\rbrace$$
-</p>
+Generally:<br>
+$p\left\lbrace E_1 \cup E_2 \cup E_3 \cup \ldotp \ldotp \ldotp \cup E_n \right\rbrace =\sum_{1\le i\le n} P\left\lbrace E_i \right\rbrace -\sum_{1\le i_1 \le i_2 \le n} P\left\lbrace E_{i_1 } \cap E_{i_2 } \right\rbrace +\sum_{1\le i_1 \le i_2 \le i_{3\;} \le n} \left\lbrace P\left\lbrace E_{i_1 } \cap E_{i_2 } \cap E_{i_3 } \right\rbrace \right\rbrace -\ldotp \ldotp \ldotp \;+{\left(-1\right)}^{n+1} P\left\lbrace E_1 \cap E_2 \cap E_3 \right\rbrace$</p>
 
 </div>
 </div>
@@ -275,13 +278,9 @@ $$p\left\lbrace E_1 \cup E_2 \cup E_3 \cup \ldotp \ldotp \ldotp \cup E_n \right\
 <h3 id="Boole's-inequality">
 <a class="anchor" href="#Boole's-inequality" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boole's inequality<a class="anchor-link" href="#Boole's-inequality"> </a>
 </h3>
-<p>For any events $E_1 ,E_2 ,\ldotp \ldotp \ldotp E_n$
- $$P\left\lbrace \bigcup_{i=1}^n E_i \right\rbrace \le \sum_{i=1}^n P\left\lbrace E_i \right\rbrace$$
-</p>
-<div class="flash flash-success">
-    <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
-    <strong>Tip: </strong>if $E\subseteq F$, then $P\left\lbrace E-F\right\rbrace =P\left\lbrace F\right\rbrace -P\left\lbrace E\right\rbrace$
-</div>
+<p>For any events $E_1 ,E_2 ,\ldotp \ldotp \ldotp E_n$<br>
+ $P\left\lbrace \bigcup_{i=1}^n E_i \right\rbrace \le \sum_{i=1}^n P\left\lbrace E_i \right\rbrace$
+ if $E\subseteq F$, then $P\left\lbrace E-F\right\rbrace =P\left\lbrace F\right\rbrace -P\left\lbrace E\right\rbrace$</p>
 
 </div>
 </div>
