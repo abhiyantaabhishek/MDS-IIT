@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: A minimal example of using markdown with fastpages.
+description: A minimal example of using markdown.
 categories: [markdown]
 title: An Example Markdown Post
 ---
@@ -47,7 +47,7 @@ And a numbered list:
 
 ## Images
 
-![]({{ site.baseurl }}/images/logo.png "fast.ai's logo")
+![]({{ site.baseurl }}/images/logo.png "logo")
 
 ## Code
 
