@@ -7,11 +7,12 @@
 <title>Probability | Home</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Probability" />
+<meta name="author" content="Abhishek Kumar Dubey" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Probability for Data Science" />
 <meta property="og:description" content="Probability for Data Science" />
-<link rel="canonical" href="https://abhiyantaabhishek.github.io/MDS-IIT/jupyter/2022/08/06/CS6660-week1.html" />
-<meta property="og:url" content="https://abhiyantaabhishek.github.io/MDS-IIT/jupyter/2022/08/06/CS6660-week1.html" />
+<link rel="canonical" href="https://abhiyantaabhishek.github.io/MDS-IIT/probability/2022/08/06/CS6660-week1.html" />
+<meta property="og:url" content="https://abhiyantaabhishek.github.io/MDS-IIT/probability/2022/08/06/CS6660-week1.html" />
 <meta property="og:site_name" content="Home" />
 <meta property="og:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/chart-preview.png" />
 <meta property="og:type" content="article" />
@@ -20,7 +21,7 @@
 <meta property="twitter:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/chart-preview.png" />
 <meta property="twitter:title" content="Probability" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-06T00:00:00-05:00","datePublished":"2022-08-06T00:00:00-05:00","description":"Probability for Data Science","headline":"Probability","image":"https://abhiyantaabhishek.github.io/MDS-IIT/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/jupyter/2022/08/06/CS6660-week1.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/jupyter/2022/08/06/CS6660-week1.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abhishek Kumar Dubey"},"dateModified":"2022-08-06T00:00:00-05:00","datePublished":"2022-08-06T00:00:00-05:00","description":"Probability for Data Science","headline":"Probability","image":"https://abhiyantaabhishek.github.io/MDS-IIT/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/probability/2022/08/06/CS6660-week1.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/probability/2022/08/06/CS6660-week1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/MDS-IIT/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhiyantaabhishek.github.io/MDS-IIT/feed.xml" title="Home" /><link rel="shortcut icon" type="image/x-icon" href="/MDS-IIT/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -93,7 +94,9 @@ window.onload = wrap_img;
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Probability</h1><p class="page-description">Probability for Data Science</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-06T00:00:00-05:00" itemprop="datePublished">
         Aug 6, 2022
-      </time>
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Abhishek Kumar Dubey</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
@@ -104,7 +107,7 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/MDS-IIT/categories/#jupyter">jupyter</a>
+        <a class="category-tags-link" href="/MDS-IIT/categories/#Probability">Probability</a>
         
       
       </p>
@@ -274,7 +277,11 @@ $$p\left\lbrace E_1 \cup E_2 \cup E_3 \cup \ldotp \ldotp \ldotp \cup E_n \right\
 </h3>
 <p>For any events $E_1 ,E_2 ,\ldotp \ldotp \ldotp E_n$
  $$P\left\lbrace \bigcup_{i=1}^n E_i \right\rbrace \le \sum_{i=1}^n P\left\lbrace E_i \right\rbrace$$
- if $E\subseteq F$, then $P\left\lbrace E-F\right\rbrace =P\left\lbrace F\right\rbrace -P\left\lbrace E\right\rbrace$</p>
+</p>
+<div class="flash flash-success">
+    <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
+    <strong>Tip: </strong>if $E\subseteq F$, then $P\left\lbrace E-F\right\rbrace =P\left\lbrace F\right\rbrace -P\left\lbrace E\right\rbrace$
+</div>
 
 </div>
 </div>
@@ -305,7 +312,7 @@ $P\left\lbrace E\right\rbrace =\frac{|E|}{|\Omega |}=\frac{365!}{\left(365-n\rig
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/MDS-IIT/jupyter/2022/08/06/CS6660-week1.html" hidden></a>
+</script><a class="u-url" href="/MDS-IIT/probability/2022/08/06/CS6660-week1.html" hidden></a>
 </article>
 
       </div>
