@@ -130,6 +130,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Conditional-Probability">Conditional Probability </a></li>
 <li class="toc-entry toc-h3"><a href="#Corollary">Corollary </a></li>
 <li class="toc-entry toc-h3"><a href="#Multiplication-Rule">Multiplication Rule </a></li>
+<li class="toc-entry toc-h3"><a href="#The-law-of-total-probability">The law of total probability </a></li>
+<li class="toc-entry toc-h3"><a href="#Bayes'-Theorem">Bayes&#39; Theorem </a></li>
 </ul>
 </li>
 </ul><!--
@@ -350,6 +352,40 @@ if $A\subseteq B$ then $P\left(B\right)-P\left(A\right)=P\left(B&lt;/em&gt;{\;} 
 <h3 id="Multiplication-Rule">
 <a class="anchor" href="#Multiplication-Rule" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multiplication Rule<a class="anchor-link" href="#Multiplication-Rule"> </a>
 </h3>
+<p>For $E_1 ,E_2 ,\ldotp \ldotp \ldotp E_n$ events:<br>
+$P\left\lbrace E_1 \cap E_2 \cap \ldotp \ldotp \ldotp \cap E_n \right\rbrace =P\left\lbrace E_1 \right\rbrace \ldotp P\left\lbrace E_2 |E_1 \right\rbrace \ldotp P\left\lbrace E_3 |E_1 \cap E_2 \right\rbrace \ldotp \ldotp \ldotp \ldotp P\left\lbrace E_n |E_1 \cap E_2 \cap \ldotp \ldotp \ldotp \cap E_{n-1} \right\rbrace$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-law-of-total-probability">
+<a class="anchor" href="#The-law-of-total-probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>The law of total probability<a class="anchor-link" href="#The-law-of-total-probability"> </a>
+</h3>
+<p>This is also known as partition theorem<br>
+For any events $E$ and $F$ <br>
+$P\left\lbrace E\right\rbrace =P\left\lbrace E|F\right\rbrace \ldotp P\left\lbrace E\right\rbrace +P\left\lbrace E|F^c \right\rbrace \ldotp P\left\lbrace F^c \right\rbrace$<br>
+$P\left\lbrace E\right\rbrace =\sum_i P\left\lbrace E|F_i \right\rbrace \ldotp P\left\lbrace F_i \right\rbrace$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Bayes'-Theorem">
+<a class="anchor" href="#Bayes'-Theorem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bayes' Theorem<a class="anchor-link" href="#Bayes'-Theorem"> </a>
+</h3>
+<p>For any events $E$ and $F$ <br>
+$P\left\lbrace F|E\right\rbrace =\frac{P\left\lbrace E|F\right\rbrace \ldotp P\left\lbrace F\right\rbrace }{P\left\lbrace E|F\right\rbrace \ldotp P\left\lbrace F\right\rbrace +P\left\lbrace E|F^c \right\rbrace \ldotp P\left\lbrace F^c \right\rbrace }$<br><br><br>
+</p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>if ${\left\lbrace F_i \right\rbrace }_i$  is a complete system of events, then<br> $P\left\lbrace F_i |E\right\rbrace =\frac{\;P\left\lbrace E|F_i \right\rbrace \ldotp P\left\lbrace F_i \right\rbrace }{\sum_j \;P\left\lbrace E|F_j \right\rbrace \ldotp P\left\lbrace F_j \right\rbrace }$
+</div>
+
 </div>
 </div>
 </div>
