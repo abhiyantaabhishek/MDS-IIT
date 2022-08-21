@@ -1,1 +1,1 @@
-Sitemap: https://abhiyantaabhishek.github.io/Data-Science/sitemap.xml
+Sitemap: https://abhiyantaabhishek.github.io/MDS-IIT/sitemap.xml
