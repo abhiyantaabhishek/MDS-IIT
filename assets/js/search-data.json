@@ -35,8 +35,8 @@
   
     
         ,"post3": {
-            "title": "Foundations of Machine Learning  week week",
-            "content": "",
+            "title": "Foundations of Machine Learning  (Basics)",
+            "content": "Types of ML . Supervised Learning classification, regression | . | Unsupervised learning | Other settings of ML Reinforcement learning | Semi-supervised learning | Active learning,Transfer learning,Structured learning | . | Dimensionality Reduction (unsupervised Learning) Large sample size is required for high dimensional data | Query accuracy and efficiency degrade rapidly as the dimension increases | strategies: Feature reduction, Feature selection, Manifold learning, Kernel learning | . | . | .",
             "url": "https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/06/CS5590-week1.html",
             "relUrl": "/foundations%20of%20machine%20learning/2022/08/06/CS5590-week1.html",
             "date": " • Aug 6, 2022"
