@@ -4,13 +4,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Foundations of Machine Learning week | HOME</title>
+<title>Foundations of Machine Learning (Evaluation Measures) | HOME</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Foundations of Machine Learning week" />
+<meta property="og:title" content="Foundations of Machine Learning (Evaluation Measures)" />
 <meta name="author" content="Abhishek Kumar Dubey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Foundations of Machine Learning for data scine ce" />
-<meta property="og:description" content="Foundations of Machine Learning for data scine ce" />
+<meta name="description" content="Foundations of Machine Learning week 2" />
+<meta property="og:description" content="Foundations of Machine Learning week 2" />
 <link rel="canonical" href="https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/20/CS5590-week2.html" />
 <meta property="og:url" content="https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/20/CS5590-week2.html" />
 <meta property="og:site_name" content="HOME" />
@@ -19,9 +19,9 @@
 <meta property="article:published_time" content="2022-08-20T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/CS6660_images/2022-08-13-CS6660-week2-preview.jpg" />
-<meta property="twitter:title" content="Foundations of Machine Learning week" />
+<meta property="twitter:title" content="Foundations of Machine Learning (Evaluation Measures)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abhishek Kumar Dubey"},"dateModified":"2022-08-20T00:00:00-05:00","datePublished":"2022-08-20T00:00:00-05:00","description":"Foundations of Machine Learning for data scine ce","headline":"Foundations of Machine Learning week","image":"https://abhiyantaabhishek.github.io/MDS-IIT/images/CS6660_images/2022-08-13-CS6660-week2-preview.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/20/CS5590-week2.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/20/CS5590-week2.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abhishek Kumar Dubey"},"dateModified":"2022-08-20T00:00:00-05:00","datePublished":"2022-08-20T00:00:00-05:00","description":"Foundations of Machine Learning week 2","headline":"Foundations of Machine Learning (Evaluation Measures)","image":"https://abhiyantaabhishek.github.io/MDS-IIT/images/CS6660_images/2022-08-13-CS6660-week2-preview.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/20/CS5590-week2.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/20/CS5590-week2.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/MDS-IIT/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhiyantaabhishek.github.io/MDS-IIT/feed.xml" title="HOME" /><link rel="shortcut icon" type="image/x-icon" href="/MDS-IIT/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -92,7 +92,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Foundations of Machine Learning  week</h1><p class="page-description">Foundations of Machine Learning   for data scine ce</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-20T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Foundations of Machine Learning (Evaluation Measures)</h1><p class="page-description">Foundations of Machine Learning  week 2</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-20T00:00:00-05:00" itemprop="datePublished">
         Aug 20, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -118,6 +118,25 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Evaluation-Measures">Evaluation Measures </a></li>
+<li class="toc-entry toc-h2"><a href="#Is-accuracy-adequate">Is accuracy adequate </a></li>
+<li class="toc-entry toc-h2"><a href="#Classification-Error">Classification Error </a></li>
+<li class="toc-entry toc-h2"><a href="#Utility-and-cost">Utility and cost </a></li>
+<li class="toc-entry toc-h2"><a href="#ROC-curve">ROC curve </a></li>
+<li class="toc-entry toc-h1"><a href="#Precision-Recall-Curve">Precision Recall Curve </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Other-performance-measures">Other performance measures </a></li>
+<li class="toc-entry toc-h2"><a href="#Important-points">Important points </a></li>
+<li class="toc-entry toc-h2"><a href="#K-Nearest-Neighbors">K-Nearest Neighbors </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#basic-idea">basic idea </a></li>
+<li class="toc-entry toc-h3"><a href="#How-to-determinke-K">How to determinke K </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Convergence-of-1-NN">Convergence of 1-NN </a></li>
+<li class="toc-entry toc-h2"><a href="#Density-Estimation-using-KNN">Density Estimation using KNN </a></li>
+</ul>
+</li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -127,6 +146,235 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Evaluation-Measures">
+<a class="anchor" href="#Evaluation-Measures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Evaluation Measures<a class="anchor-link" href="#Evaluation-Measures"> </a>
+</h2>
+<ul>
+<li>Classification<ul>
+<li>It is a measure of being  right/wrong,0-1, eg:  hinge loss, cross entropy loss </li>
+</ul>
+</li>
+<li>Regression loss<ul>
+<li>It is a measure if how close we are to target, eg:  MEA, MES</li>
+</ul>
+</li>
+<li>Ranking/search<ul>
+<li>It is a measure of top K search</li>
+</ul>
+</li>
+<li>Clustering <ul>
+<li>How well we have described the data ( not straight forward)</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Is-accuracy-adequate">
+<a class="anchor" href="#Is-accuracy-adequate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Is accuracy adequate<a class="anchor-link" href="#Is-accuracy-adequate"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Accuracy may not not be useful in cases where:</p>
+<ul>
+<li>There is a large class skew.</li>
+<li>There are differential misclassification cost, say getting a positive wrong costs more than getting a negative wrong.</li>
+<li>we are most interested in a subset of high confidence predictions. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Classification-Error">
+<a class="anchor" href="#Classification-Error" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classification Error<a class="anchor-link" href="#Classification-Error"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/MDS-IIT/images/copied_from_nb/CS5590_images/chrome_CNeo323E9V.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Tips:<br><br> True  positive rate also called sensitivity, recall, hit rate <br> Specificity = 1 - False Alarm<br> sensitivity = Probability of positive test given a patient has a disease.<br> Specificity = Probability of a negative test given a patient is well.<br></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Utility-and-cost">
+<a class="anchor" href="#Utility-and-cost" aria-hidden="true"><span class="octicon octicon-link"></span></a>Utility and cost<a class="anchor-link" href="#Utility-and-cost"> </a>
+</h2>
+<ul>
+<li>Detection Cost:<ul>
+<li>cost = $C_{\mathrm{FP}} \times \mathrm{FP}+C_{\mathrm{FN}} \times \mathrm{FN}$</li>
+</ul>
+</li>
+<li>Fmeasure<ul>
+<li>$F1=\frac{2\times \left(\mathrm{Recall}\times \mathrm{Precision}\right)}{\mathrm{Recall}+\mathrm{Precision}}$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ROC-curve">
+<a class="anchor" href="#ROC-curve" aria-hidden="true"><span class="octicon octicon-link"></span></a>ROC curve<a class="anchor-link" href="#ROC-curve"> </a>
+</h2>
+<ul>
+<li>Receiver Operative Curve</li>
+<li>Plot between True positive rate on y axis and False positive rate on x axis </li>
+<li>AUC : Area under the curve, higher the area, better the performance</li>
+</ul>
+<p><img src="/MDS-IIT/images/copied_from_nb/CS5590_images/MATLAB_eYMZjl3LEJ.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Precision-Recall-Curve">
+<a class="anchor" href="#Precision-Recall-Curve" aria-hidden="true"><span class="octicon octicon-link"></span></a>Precision Recall Curve<a class="anchor-link" href="#Precision-Recall-Curve"> </a>
+</h1>
+<ul>
+<li>Plot between Precision on y axis and recall (TPR) on x axis</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Other-performance-measures">
+<a class="anchor" href="#Other-performance-measures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other performance measures<a class="anchor-link" href="#Other-performance-measures"> </a>
+</h2>
+<ul>
+<li>Kullback-Leibler Diverfence : $D_{\mathrm{KL}} \left(P\|Q\right)=\sum_i P\left(i\right)\log \frac{P\left(i\right)}{Q\left(i\right)}$</li>
+<li>Gini Statistic : $2\times \mathrm{AUC}-1$</li>
+<li>F1 score: $\frac{2\times \left(\mathrm{Recall}\times \mathrm{Precision}\right)}{\mathrm{Recall}+\mathrm{Precision}}$</li>
+<li>Akaike Information Criterion (AIC): $2k-2\ln \left(L\right)$, here  $k$ is number of model parameters, L is max value of the Likelihood  function for the model</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Important-points">
+<a class="anchor" href="#Important-points" aria-hidden="true"><span class="octicon octicon-link"></span></a>Important points<a class="anchor-link" href="#Important-points"> </a>
+</h2>
+<ul>
+<li>Randomization of data is essential so that held-aside test data can be really representative of new data. </li>
+<li>Test set should never be used in any way for normalization, hyper parameter tuning etc.</li>
+<li>Any preprocessing done over entire data set ( feature selection, parameter tuning, threshold selection ) must not use labels from test set. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="K-Nearest-Neighbors">
+<a class="anchor" href="#K-Nearest-Neighbors" aria-hidden="true"><span class="octicon octicon-link"></span></a>K-Nearest Neighbors<a class="anchor-link" href="#K-Nearest-Neighbors"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="basic-idea">
+<a class="anchor" href="#basic-idea" aria-hidden="true"><span class="octicon octicon-link"></span></a>basic idea<a class="anchor-link" href="#basic-idea"> </a>
+</h3>
+<ul>
+<li>If it walks like a duck, quacks like a duck , then it's probably a duck.</li>
+<li>If data points are represented well then KNN works well.</li>
+<li>choosing K is important, if K is too small then it becomes sensitive to noise point. If k is too large, neighborhood may incudes points from other class.</li>
+<li>Euclidean distance between two instance $d\left(X_i ,X_j \right)=\sqrt{\sum_{r=1}^n {\left(a_r \left(X_i \right)-a_{r\left(X_j \right)} \right)}^2 }$ here $a_i \left(X\right)\;$ denotes features.</li>
+<li>In case of continuous valued target function, Mean value of K nearest training examples is taken</li>
+</ul>
+<h3 id="How-to-determinke-K">
+<a class="anchor" href="#How-to-determinke-K" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to determinke K<a class="anchor-link" href="#How-to-determinke-K"> </a>
+</h3>
+<ul>
+<li>experiment with different value of K starting form 1 on test set to validate the error, in case of binary classification use odd number for k to avoid ties.<br><blockquote>
+<p>KNN is a transductive method, there is no training involved , it is refereed as Lazy learning, Learning is just storing all the training instances <br> 
+Similar Keywords:KNN, Memory Based Reasoning, Example Based Reasoning, Instance Based Learning, Case Based Reasoning, Lazy Learning<br>&gt; Voronoi Diagram:Decision surface formed by the training Examples for 1 nearest neighbors classifier<br> ### Improvements</p>
+</blockquote>
+</li>
+<li>Distance weighted Nearest Neighbors</li>
+<li>Scaling (normalization) attributes for fair computation fo distances </li>
+<li>Measure "closeness" differently</li>
+<li>Finding "close" example in large training set quickly , eg Efficient memory indexing using kd-tree
+### Pros</li>
+<li>Highly effective transductive inference method for noisy training data and complex target functions.</li>
+<li>Target function for a whole space may be described as a combinations of less complex local  approximations </li>
+<li>Trains very fast (Lazy Learner)
+### Cons</li>
+<li>Curse of dimensionality </li>
+<li>Storage: all training example are saved in memory </li>
+<li>slow at query time, can be overcome by  pre sorting and indexing training samples.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Convergence-of-1-NN">
+<a class="anchor" href="#Convergence-of-1-NN" aria-hidden="true"><span class="octicon octicon-link"></span></a>Convergence of 1-NN<a class="anchor-link" href="#Convergence-of-1-NN"> </a>
+</h2>
+<p>$P\left(\mathrm{KNNError}\right)=2\left(\mathrm{Bayes}\;\mathrm{Optimal}\;\mathrm{Error}\;\mathrm{Rate}\right)$ , Probability of K NN error is at most twice the bayes optimal error, bayes optimal error is best(least) error we can get using machine learning <br>
+It is Possible to show that: as the size of training data set approaches infinity, the one nearest neighbor classifier guarantees an error rate of no worse than twice the bayes error rate ( the minimum achievable error rate given the distribution of the data).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Density-Estimation-using-KNN">
+<a class="anchor" href="#Density-Estimation-using-KNN" aria-hidden="true"><span class="octicon octicon-link"></span></a>Density Estimation using KNN<a class="anchor-link" href="#Density-Estimation-using-KNN"> </a>
+</h2>
+<p>Non parametric Density Estimation using KNN. <br>
+nstead of fixing bin width h and counting the mumber of instances, fix the instances(neighbors) k and check bin width $\hat{p} \left(X\right)=\frac{k}{2{\mathrm{Nd}}_k \left(X\right)}$ here $d_k \left(X\right)$ is the $k_{\mathrm{th}}$ closest distance to to $X$ , This is also known as <strong>Parzen density estimation</strong>.</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
