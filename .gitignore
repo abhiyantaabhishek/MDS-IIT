@@ -12,4 +12,8 @@ _notebooks/.ipynb_checkpoints
 .netlify
 .tweet-cache
 .vscode
+_posts
+images/copied_from_nb
+settings.ini
+Gemfile.lock
 __pycache__
