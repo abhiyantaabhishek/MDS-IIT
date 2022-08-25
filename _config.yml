@@ -7,7 +7,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 
 title: HOME
-description: Data Science Notes
+description: Home page contains all the posts date wise whereas Tag Page contains the same category wise.
 github_username: abhiyantaabhishek
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "Data-Science"
@@ -40,6 +40,7 @@ baseurl: "/MDS-IIT" # the subpath of your site, e.g. "/blog".
 minima:
   social_links:
     github: abhiyantaabhishek
+    linkedin: abhishek-kumar-dubey-585a86179
 
 # Set this to true to get LaTeX math equation support
 use_math: true
@@ -118,7 +119,7 @@ kramdown:
 
 # to limit size of xml as it can grow quite large.
 feed:
-  posts_limit: 5 #default posts_limit: 10
+  posts_limit: 100 #default posts_limit: 10
   excerpt_only: true
   
 exclude:
