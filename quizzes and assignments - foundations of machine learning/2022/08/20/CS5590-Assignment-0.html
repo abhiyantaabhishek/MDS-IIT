@@ -193,6 +193,7 @@ Please use <a href="https://docs.python.org/3/tutorial/">https://docs.python.org
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Version:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">configuration:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">show_config</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -207,63 +208,6 @@ Please use <a href="https://docs.python.org/3/tutorial/">https://docs.python.org
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Version:
  1.21.5
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">configuration:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">show_config</span><span class="p">())</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>blas_mkl_info:
-    libraries = ['mkl_rt', 'pthread']
-    library_dirs = ['/home/yasmi/anaconda3/lib']
-    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]
-    include_dirs = ['/home/yasmi/anaconda3/include']
-blas_opt_info:
-    libraries = ['mkl_rt', 'pthread']
-    library_dirs = ['/home/yasmi/anaconda3/lib']
-    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]
-    include_dirs = ['/home/yasmi/anaconda3/include']
-lapack_mkl_info:
-    libraries = ['mkl_rt', 'pthread']
-    library_dirs = ['/home/yasmi/anaconda3/lib']
-    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]
-    include_dirs = ['/home/yasmi/anaconda3/include']
-lapack_opt_info:
-    libraries = ['mkl_rt', 'pthread']
-    library_dirs = ['/home/yasmi/anaconda3/lib']
-    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]
-    include_dirs = ['/home/yasmi/anaconda3/include']
-Supported SIMD extensions in this NumPy install:
-    baseline = SSE,SSE2,SSE3
-    found = SSSE3,SSE41,POPCNT,SSE42,AVX,F16C,FMA3,AVX2
-    not found = AVX512F,AVX512CD,AVX512_KNL,AVX512_KNM,AVX512_SKX,AVX512_CNL
-
-configuration:
- None
 </pre>
 </div>
 </div>
