@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Quiz 1 Probability | HOME</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Quiz 1 Probability" />
+<meta name="author" content="Abhishek Kumar Dubey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Mathematical Foundations of Data Science CS6660 Quiz 1" />
+<meta property="og:description" content="Mathematical Foundations of Data Science CS6660 Quiz 1" />
+<link rel="canonical" href="https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science%20quizzes%20and%20assignments/2022/08/20/CS6660-Quiz-1.html" />
+<meta property="og:url" content="https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science%20quizzes%20and%20assignments/2022/08/20/CS6660-Quiz-1.html" />
+<meta property="og:site_name" content="HOME" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-20T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Quiz 1 Probability" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abhishek Kumar Dubey"},"dateModified":"2022-08-20T00:00:00-05:00","datePublished":"2022-08-20T00:00:00-05:00","description":"Mathematical Foundations of Data Science CS6660 Quiz 1","headline":"Quiz 1 Probability","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science%20quizzes%20and%20assignments/2022/08/20/CS6660-Quiz-1.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science%20quizzes%20and%20assignments/2022/08/20/CS6660-Quiz-1.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/MDS-IIT/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhiyantaabhishek.github.io/MDS-IIT/feed.xml" title="HOME" /><link rel="shortcut icon" type="image/x-icon" href="/MDS-IIT/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/MDS-IIT/">HOME</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/MDS-IIT/about/">About Me</a><a class="page-link" href="/MDS-IIT/search/">Search</a><a class="page-link" href="/MDS-IIT/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Quiz 1 Probability</h1><p class="page-description">Mathematical Foundations of Data Science CS6660 Quiz 1</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-20T00:00:00-05:00" itemprop="datePublished">
+        Aug 20, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Abhishek Kumar Dubey</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/MDS-IIT/categories/#Mathematical Foundations of Data Science Quizzes and assignments">Mathematical Foundations of Data Science Quizzes and assignments</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Question-1">Question 1 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-2">Question 2 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-3">Question 3 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-4">Question 4 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-5">Question 5 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-6">Question 6 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-7">Question 7 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-8">Question 8 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-9">Question 9 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-10">Question 10 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-11">Question 11 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-12">Question 12 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-13">Question 13 </a></li>
+<li class="toc-entry toc-h1"><a href="#Question-14">Question 14 </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-08-20-CS6660-Quiz-1.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-1">
+<a class="anchor" href="#Question-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 1<a class="anchor-link" href="#Question-1"> </a>
+</h1>
+<p>Suppose X is a random variable that takes values from the set {0, 1}. If $E(X) = 0.3$, then what is $E(X^2)$?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+we know for  Indicator random variable <br>
+$E\left(X\right)=0\cdot p\left(0\right)+1\cdot p\left(1\right)$<br>
+so substituting values we get :<br>
+$0\ldotp 3=1\ldotp p\left(1\right)$<br>
+$\Rightarrow p\left(1\right)=0\ldotp 3\;,p\left(0\right)=0\ldotp 7$<br>
+Now:<br>
+$E\left(X^2 \right)=0^2 \cdot p\left(0\right)+1^2 \cdot p\left(1\right)$<br>
+$\Rightarrow E\left(X^2 \right)=1\cdot p\left(1\right)=0\ldotp 3$<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-2">
+<a class="anchor" href="#Question-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 2<a class="anchor-link" href="#Question-2"> </a>
+</h1>
+<p>Suppose $A$ and $B$ are two mutually exclusive events with $P(A) = 0.3$ and $P(B) = 0.4$. Then $P(A|B) =?$ and $P(A|B^C) =?$</p>
+<ul>
+<li>Answer<br>
+$p\left(A|B\right)=\frac{p\left(A\cap B\right)}{p\left(B\right)}$<br>
+$p\left(A\cap B\right)=0$, mutually exclusive <br>
+$\Rightarrow p\left(A|B\right)=0$<br>
+Now:<br>
+$p\left(A|B^c \right)=\frac{p\left(A\cap B^c \right)}{p\left(B^c \right)}$<br>
+$\Rightarrow p\left(A|B^c \right)=\frac{p\left(A\right)-p\left(A\cap \;B\right)}{p\left(B^c \right)}$<br>
+$\Rightarrow p\left(A|B^c \right)=\frac{0\ldotp 3-0}{1-0\ldotp 4}=0\ldotp 5$<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-3">
+<a class="anchor" href="#Question-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 3<a class="anchor-link" href="#Question-3"> </a>
+</h1>
+<p>Suppose $X$ and $Y$ are random variables such that $E(X) = 10, Var(X) = 50, E(Y) = 5,$ and $Var(Y) = 40.$ Then what is $E(2X+Y)?$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+$E\left(2X+Y\right)=E\left(2X\right)+E\left(Y\right)=2E\left(X\right)+E\left(Y\right)$<br>
+$\Rightarrow 2\times 10+5=25$<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-4">
+<a class="anchor" href="#Question-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 4<a class="anchor-link" href="#Question-4"> </a>
+</h1>
+<p>Suppose $A$ and $B$ are events such that $P(A) = 0.3, P(B) = 0.2$ and $P(A \cap B) = 0.1$. Then what is $P(A^c \cap B^C)$?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer<br>
+$P\left(A^c \cap B^c \right)={P\left(A\cup \;B\right)}^c$<br>
+$P\left(A\cup B\right)=P\left(A\right)+P\left(B\right)-P\left(A\cap B\right)$<br>
+$\Rightarrow P\left(A\cup B\right)=0\ldotp 3+0\ldotp 2-0\ldotp 1$<br>
+$\Rightarrow P\left(A\cup B\right)=0\ldotp 4$<br>
+${P\left(A\cup B\right)}^c =1-P\left(A\cup B\right)=1-0\ldotp 4=0\ldotp 6$<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-5">
+<a class="anchor" href="#Question-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 5<a class="anchor-link" href="#Question-5"> </a>
+</h1>
+<p>Suppose $A$ and $B$ are independent events such that $P(A) = 0.2$ and $P(B) = 0.5$. Then what is $P(A \cup B)$?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+$P\left(A\cup B\right)=P\left(A\right)+P\left(B\right)-P\left(A\cap B\right)$<br>
+$P\left(A\cap \;B\right)=P\left(A\right)\cdot P\left(B\right)$, Because $A$ and $B$ are independent here.<br>
+Hence,<br>
+$P\left(A\cup B\right)=P\left(A\right)+P\left(B\right)-P\left(A\right)\cdot P\left(B\right)$<br>
+$\Rightarrow P\left(A\cup B\right)=0\ldotp 2+0\ldotp 5-0\ldotp 2*0\ldotp 5=0\ldotp 6$<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-6">
+<a class="anchor" href="#Question-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 6<a class="anchor-link" href="#Question-6"> </a>
+</h1>
+<p>Suppose $X$ is a random variable such that $E(X) = 10$ and $E(X^2) = 150$. What is the variance of $X$?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+$\mathrm{Var}\left(X\right)=E\left(X^2 \right)-{\left(E\left(X\right)\right)}^2$<br>
+$\Rightarrow \mathrm{Var}\left(X\right)=150-{10}^2 =50$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-7">
+<a class="anchor" href="#Question-7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 7<a class="anchor-link" href="#Question-7"> </a>
+</h1>
+<p>Suppose $A$ and $B$ are events such that $P(A) = 0.8, P(B) = 0.6,$ and $P(A^c \cap B^c) = 0.2.$ Then which of the following is true?</p>
+<ul>
+<li>Neither A nor B is contained in the other</li>
+<li>A and B are mutually exclusive</li>
+<li>None of the choices can be inferred</li>
+<li>A is a subset of B</li>
+<li>B is a subset of A</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+$P\left(A^c \cap B^c \right)={P\left(A\cup B\right)}^c$<br>
+$P\left(A\cup B\right)=1-{P\left(A\cup B\right)}^c =1-0\ldotp 2=0\ldotp 8$<br>
+$P\left(A\cup B\right)=P\left(A\right)+P\left(B\right)+P\left(A\cap B\right)$<br>
+$\Rightarrow 0\ldotp 8=0\ldotp 8+0\ldotp 6+P\left(A\cap B\right)$<br>
+$\Rightarrow P\left(A\cap B\right)=0\ldotp 6$<br>
+Notice:<br>
+$P\left(A\right)=0\ldotp 8,P\left(B\right)=0\ldotp 6\;,P\left(A\cap B\right)=0\ldotp 6$<br>
+Hence B is subset of A<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-8">
+<a class="anchor" href="#Question-8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 8<a class="anchor-link" href="#Question-8"> </a>
+</h1>
+<p>Suppose you roll two fair dice and look at the sum of the two results. The probability of getting a value of at least (greater than or equal to) 10 is ?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+The sum value of 10, 11 and 12 qualifies for at least greater than or equal to 10<br>
+so the events are ${(6,4),(5,5),(4,6),(6,5),(5.6),(6,6)}$<br>
+so the probability is $\frac{6}{36}=\frac{1}{6} $<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-9">
+<a class="anchor" href="#Question-9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 9<a class="anchor-link" href="#Question-9"> </a>
+</h1>
+<p>Let $X$ be a random variable which takes values from $\left\lbrace 1,2,3\right\rbrace$ with equal probability. What is the variance of $X$?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+$\mathrm{Var}\left(X\right)=E\left(X^2 \right)-{\left(E\left(X\right)\right)}^2$<br>
+$E\left(X\right)=\frac{1+2+3}{3}=2$<br>
+$E\left(X^2 \right)=\frac{1^2 +2^2 +3^2 }{3}=\frac{14}{3}$<br>
+$\Rightarrow \mathrm{Var}\left(X\right)=\frac{14}{3}-4=\frac{2}{3}$<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-10">
+<a class="anchor" href="#Question-10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 10<a class="anchor-link" href="#Question-10"> </a>
+</h1>
+<p>Let $X$ be a random variable which takes values from $\left\lbrace 10,20,30\right\rbrace$ with equal probability. What is the variance of $X$?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+The answer can be calculated as in question 9, but we can notice that the values is scaled by $10$ as compared to question 9, so the variance will be scaled by $10^2$, hence the answer is $\frac{200}{3}$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-11">
+<a class="anchor" href="#Question-11" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 11<a class="anchor-link" href="#Question-11"> </a>
+</h1>
+<p>Suppose the probability of a random person of the population having covid is $0.1$. Given that the person has covid, the probability of the person having cough is $0.9$. Given that the person does not have covid, the probability of having cough is $0.01$.<br>
+Suppose a random person from the population has cough. What is the probability that he/she has covid?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+Given:<br>
+$P\left(\mathrm{covid}\right)=0\ldotp 1$<br>
+$p\left(\mathrm{cough}|\mathrm{covid}\right)=0\ldotp 9$<br>
+$p\left(\mathrm{cough}|{\mathrm{covid}}^c \right)=0\ldotp 01$<br>
+Find:<br>
+$p\left(\mathrm{covid}|\mathrm{cough}\right)=?$<br>
+calculate probability of not covid<br>
+$P\left({\mathrm{covid}}^c \right)=1-P\left(\mathrm{covid}\right)=1-0\ldotp 1=0\ldotp 9$<br>
+Use Bayes theorem <br>
+$p\left(\mathrm{covid}|\mathrm{cough}\right)=\frac{p\left(\mathrm{cough}|\mathrm{covid}\right)\times p\left(\mathrm{covid}\right)}{p\left(\mathrm{cough}|\mathrm{covid}\right)\times p\left(\mathrm{covid}\right)+p\left(\mathrm{cough}|{\mathrm{covid}}^c \right)\times p\left({\mathrm{covid}}^c \right)}$<br>
+$\Rightarrow p\left(\mathrm{covid}|\mathrm{cough}\right)=\frac{0\ldotp 9\times 0\ldotp 1}{0\ldotp 9\times 0\ldotp 1+0\ldotp 01\times 0\ldotp 9}=\frac{10}{11}$<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-12">
+<a class="anchor" href="#Question-12" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 12<a class="anchor-link" href="#Question-12"> </a>
+</h1>
+<p>Let $A$ be an event, and let $P(A)$ denote the probability of the event $A$. Which of the following options is correct?</p>
+<ul>
+<li>$P(A)$ is at most $1$ but has no lower bound (unbounded)</li>
+<li>$P(A)$ is at least $0$ and at most $1$</li>
+<li>$P(A)$ is at least $0$ but has no upper bound (unbounded)</li>
+<li>$P(A)$ has neither an upper bound nor a lower bound</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+P(A) is at least 0 and at most 1</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-13">
+<a class="anchor" href="#Question-13" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 13<a class="anchor-link" href="#Question-13"> </a>
+</h1>
+<p>Let $A$ and $B$ be two events, such that $P(A) = 1$ and $P(B) &gt; 0$. Which of the following is true?</p>
+<ul>
+<li>A and B are nether independent nor mutually exclusive</li>
+<li>A and B are independent and mutually exclusive</li>
+<li>A and B are mutually exclusive but not independent</li>
+<li>A and B are independent, but not mutually exclusive</li>
+<li>Cannot conclude any of the choices from the information given.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-14">
+<a class="anchor" href="#Question-14" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 14<a class="anchor-link" href="#Question-14"> </a>
+</h1>
+<p>Suppose there is a meeting of 5 friends. The probability that a given member of the population is covid positive is 0.1. Which of the following is an upper bound on the probability that at least one in the meeting is covid positive?</p>
+<ul>
+<li>0.05</li>
+<li>0.00001</li>
+<li>0.25</li>
+<li>0.5</li>
+<li>0.3</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Answer:<br>
+$p\left(\mathrm{covid}\right)=0\ldotp 1$<br>
+$\mathrm{At}\;\mathrm{least}\;\mathrm{one}=\mathrm{complement}\;\mathrm{of}\;\mathrm{none}$<br>
+$p\left(\mathrm{at}\;\mathrm{least}\;\mathrm{one}\;\mathrm{covid}\;\mathrm{positive}\right)={p\left(\mathrm{none}\;\mathrm{covid}\;\mathrm{positive}\right)}^c$<br>
+$p\left(\mathrm{none}\;\mathrm{covid}\;\mathrm{positive}\right)=0\ldotp 9\times 0\ldotp 9\times 0\ldotp 9\times 0\ldotp 9\times 0\ldotp 9=0\ldotp 59$<br>
+$p\left(\mathrm{at}\;\mathrm{least}\;\mathrm{one}\;\mathrm{covid}\;\mathrm{positive}\right)=1-0\ldotp 59=0\ldotp 41$<br>
+So the upper bound is 0.5<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="abhiyantaabhishek/MDS-IIT"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/MDS-IIT/mathematical%20foundations%20of%20data%20science%20quizzes%20and%20assignments/2022/08/20/CS6660-Quiz-1.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/MDS-IIT/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/MDS-IIT/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/MDS-IIT/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Home page contains all the posts date wise whereas Tag Page contains the same category wise.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/abhiyantaabhishek" target="_blank" title="abhiyantaabhishek"><svg class="svg-icon grey"><use xlink:href="/MDS-IIT/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/abhishek-kumar-dubey-585a86179" target="_blank" title="abhishek-kumar-dubey-585a86179"><svg class="svg-icon grey"><use xlink:href="/MDS-IIT/assets/minima-social-icons.svg#linkedin"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
