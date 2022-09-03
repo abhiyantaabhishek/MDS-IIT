@@ -249,7 +249,7 @@ window.onload = wrap_img;
 <p></p>
 <div class="flash flash-success">
     <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
-    <strong>Tip: </strong><br><br> Precision = How many retrieved items as relevant? <br> Recall = How many relevant items are retrieved?
+    <strong>Tip: </strong><br><br> Precision = How many retrieved items are relevant? <br> Recall = How many relevant items are retrieved?
 </div>
 
 </div>
@@ -499,7 +499,7 @@ But PR curve which is drawn between precision and recall, will look totally diff
 <li>If it walks like a duck, quacks like a duck , then it's probably a duck.</li>
 <li>If data points are represented well then KNN works well.</li>
 <li>choosing K is important, if K is too small then it becomes sensitive to noise point. If k is too large, neighborhood may incudes points from other class.</li>
-<li>Euclidean distance between two instance $d\left(X_i ,X_j \right)=\sqrt{\sum_{r=1}^n {\left(a_r \left(X_i \right)-a_{r\left(X_j \right)} \right)}^2 }$ here $a_i \left(X\right)\;$ denotes features.</li>
+<li>Euclidean distance between two instance $d\left(X_i ,X_j \right)=\sqrt{\sum_{r=1}^n {\left(a_r \left(X_i \right)-a_r{\left(X_j \right)} \right)}^2 }$  here $a_i \left(X\right)\;$ denotes features.</li>
 <li>In case of continuous valued target function, Mean value of K nearest training examples is taken</li>
 </ul>
 <h2 id="How-to-determinke-K">
