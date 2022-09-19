@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Classifiers (Decision Trees, NBC) CS5590 week 3 | HOME</title>
+<title>Decision Trees, Naive Bayes CS5590 week 3 | HOME</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Classifiers (Decision Trees, NBC) CS5590 week 3" />
+<meta property="og:title" content="Decision Trees, Naive Bayes CS5590 week 3" />
 <meta name="author" content="Abhishek Kumar Dubey" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Foundations of Machine Learning CS5590 week 3" />
@@ -19,9 +19,9 @@
 <meta property="article:published_time" content="2022-08-27T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/CS5590_images/Code_GehOQCy4hw.png" />
-<meta property="twitter:title" content="Classifiers (Decision Trees, NBC) CS5590 week 3" />
+<meta property="twitter:title" content="Decision Trees, Naive Bayes CS5590 week 3" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abhishek Kumar Dubey"},"dateModified":"2022-08-27T00:00:00-05:00","datePublished":"2022-08-27T00:00:00-05:00","description":"Foundations of Machine Learning CS5590 week 3","headline":"Classifiers (Decision Trees, NBC) CS5590 week 3","image":"https://abhiyantaabhishek.github.io/MDS-IIT/images/CS5590_images/Code_GehOQCy4hw.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/27/CS5590-week3.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/27/CS5590-week3.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abhishek Kumar Dubey"},"dateModified":"2022-08-27T00:00:00-05:00","datePublished":"2022-08-27T00:00:00-05:00","description":"Foundations of Machine Learning CS5590 week 3","headline":"Decision Trees, Naive Bayes CS5590 week 3","image":"https://abhiyantaabhishek.github.io/MDS-IIT/images/CS5590_images/Code_GehOQCy4hw.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/27/CS5590-week3.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/08/27/CS5590-week3.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/MDS-IIT/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhiyantaabhishek.github.io/MDS-IIT/feed.xml" title="HOME" /><link rel="shortcut icon" type="image/x-icon" href="/MDS-IIT/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -92,7 +92,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Classifiers (Decision Trees, NBC) CS5590  week 3</h1><p class="page-description">Foundations of Machine Learning CS5590  week 3</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-27T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Decision Trees, Naive Bayes  CS5590  week 3</h1><p class="page-description">Foundations of Machine Learning CS5590  week 3</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-27T00:00:00-05:00" itemprop="datePublished">
         Aug 27, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      8 min read
     
 </span></p>
 
@@ -158,6 +158,10 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#Formulation">Formulation </a></li>
 <li class="toc-entry toc-h2"><a href="#Example">Example </a></li>
+<li class="toc-entry toc-h2"><a href="#Pros-and-Cons">Pros and Cons </a></li>
+<li class="toc-entry toc-h2"><a href="#Practical-Issues">Practical Issues </a></li>
+<li class="toc-entry toc-h2"><a href="#Bayesian-Belief-network-(-Bayesian-net-)">Bayesian Belief network ( Bayesian net ) </a></li>
+<li class="toc-entry toc-h2"><a href="#Naive-Bayes-Classifier-category">Naive Bayes Classifier category </a></li>
 </ul>
 </li>
 </ul><!--
@@ -545,6 +549,15 @@ $\displaystyle C_{ML}=\arg \max_c P(A_1,A_2,\dots A_n|C)$</li>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given a data as shown in as shown in below data frame, Find if tennis will be played for a scenario  given by $X$:<br>
+$X=( \mathrm{ Outlook = Sunny, Temperature= Cool, Humidity =High, Wind= Strong})$<br></p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -569,7 +582,7 @@ $\displaystyle C_{ML}=\arg \max_c P(A_1,A_2,\dots A_n|C)$</li>
             <span class="p">[</span><span class="s1">'D13'</span><span class="p">,</span>    <span class="s1">'Overcast'</span><span class="p">,</span>  <span class="s1">'Hot'</span><span class="p">,</span>             <span class="s1">'Normal'</span><span class="p">,</span>       <span class="s1">'Weak'</span><span class="p">,</span>       <span class="s1">'Yes'</span>        <span class="p">],</span>
             <span class="p">[</span><span class="s1">'D14'</span><span class="p">,</span>    <span class="s1">'Rain'</span><span class="p">,</span>    <span class="s1">'Mild'</span><span class="p">,</span>              <span class="s1">'High'</span><span class="p">,</span>         <span class="s1">'Strong'</span><span class="p">,</span>     <span class="s1">'No'</span>         <span class="p">]]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">Attributes</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">df</span>
 </pre></div>
 
     </div>
@@ -581,15 +594,166 @@ $\displaystyle C_{ML}=\arg \max_c P(A_1,A_2,\dots A_n|C)$</li>
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>  Day   Outlook Temperature Humidity    Wind Play Tennis
-0  D1     Sunny         Hot     High    Weak          No
-1  D2     Sunny         Hot     High  Strong          No
-2  D3  Overcast         Hot     High    Weak         Yes
-3  D4      Rain        Mild     High    Weak         Yes
-4  D5      Rain        Cool   Normal    Weak         Yes
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Day</th>
+      <th>Outlook</th>
+      <th>Temperature</th>
+      <th>Humidity</th>
+      <th>Wind</th>
+      <th>Play Tennis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>D1</td>
+      <td>Sunny</td>
+      <td>Hot</td>
+      <td>High</td>
+      <td>Weak</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>D2</td>
+      <td>Sunny</td>
+      <td>Hot</td>
+      <td>High</td>
+      <td>Strong</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>D3</td>
+      <td>Overcast</td>
+      <td>Hot</td>
+      <td>High</td>
+      <td>Weak</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>D4</td>
+      <td>Rain</td>
+      <td>Mild</td>
+      <td>High</td>
+      <td>Weak</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>D5</td>
+      <td>Rain</td>
+      <td>Cool</td>
+      <td>Normal</td>
+      <td>Weak</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>D6</td>
+      <td>Rain</td>
+      <td>Cool</td>
+      <td>Normal</td>
+      <td>Strong</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>D7</td>
+      <td>Overcast</td>
+      <td>Cool</td>
+      <td>Normal</td>
+      <td>Strong</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>D8</td>
+      <td>Sunny</td>
+      <td>Mild</td>
+      <td>High</td>
+      <td>Weak</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>D9</td>
+      <td>Sunny</td>
+      <td>Cool</td>
+      <td>Normal</td>
+      <td>Weak</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>D10</td>
+      <td>Rain</td>
+      <td>Mild</td>
+      <td>Normal</td>
+      <td>Weak</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>D11</td>
+      <td>Sunny</td>
+      <td>Mild</td>
+      <td>Normal</td>
+      <td>Strong</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>D12</td>
+      <td>Overcast</td>
+      <td>Mild</td>
+      <td>High</td>
+      <td>Strong</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>D13</td>
+      <td>Overcast</td>
+      <td>Hot</td>
+      <td>Normal</td>
+      <td>Weak</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>D14</td>
+      <td>Rain</td>
+      <td>Mild</td>
+      <td>High</td>
+      <td>Strong</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -598,6 +762,307 @@ $\displaystyle C_{ML}=\arg \max_c P(A_1,A_2,\dots A_n|C)$</li>
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_html</span> 
+<span class="n">all_tables</span><span class="o">=</span><span class="s2">""</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">table</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Play Tennis'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Play Tennis'</span><span class="p">]</span><span class="o">==</span><span class="n">c</span><span class="p">)</span> <span class="p">,[</span><span class="n">col</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Play Tennis'</span><span class="p">]</span><span class="o">==</span><span class="n">c</span><span class="p">)</span> <span class="p">,[</span><span class="n">col</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">col</span><span class="o">+</span><span class="s1">'_'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="s1">'Play_Tennis'</span><span class="o">+</span><span class="s1">'_'</span><span class="o">+</span><span class="n">c</span><span class="p">]</span><span class="o">=</span><span class="s2">"</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
+            <span class="n">table_styler</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_table_attributes</span><span class="p">(</span><span class="s2">"style='display:inline'"</span><span class="p">)</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">all_tables</span><span class="o">=</span><span class="n">all_tables</span><span class="o">+</span><span class="n">table_styler</span><span class="o">.</span><span class="n">_repr_html_</span><span class="p">()</span>
+<span class="n">display_html</span> <span class="p">(</span><span class="n">all_tables</span><span class="p">,</span><span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style type="text/css">
+</style>
+<table id="T_5ee0d" style="display:inline">
+  <caption>Outlook</caption>
+  <thead>
+    <tr>
+      <th class="blank level0"> </th>
+      <th id="T_5ee0d_level0_col0" class="col_heading level0 col0">Play_Tennis_No</th>
+      <th id="T_5ee0d_level0_col1" class="col_heading level0 col1">Play_Tennis_Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_5ee0d_level0_row0" class="row_heading level0 row0">Outlook_Sunny</th>
+      <td id="T_5ee0d_row0_col0" class="data row0 col0">3/5</td>
+      <td id="T_5ee0d_row0_col1" class="data row0 col1">2/9</td>
+    </tr>
+    <tr>
+      <th id="T_5ee0d_level0_row1" class="row_heading level0 row1">Outlook_Overcast</th>
+      <td id="T_5ee0d_row1_col0" class="data row1 col0">0/5</td>
+      <td id="T_5ee0d_row1_col1" class="data row1 col1">4/9</td>
+    </tr>
+    <tr>
+      <th id="T_5ee0d_level0_row2" class="row_heading level0 row2">Outlook_Rain</th>
+      <td id="T_5ee0d_row2_col0" class="data row2 col0">2/5</td>
+      <td id="T_5ee0d_row2_col1" class="data row2 col1">3/9</td>
+    </tr>
+  </tbody>
+</table>
+<style type="text/css">
+</style>
+<table id="T_5a776" style="display:inline">
+  <caption>Temperature</caption>
+  <thead>
+    <tr>
+      <th class="blank level0"> </th>
+      <th id="T_5a776_level0_col0" class="col_heading level0 col0">Play_Tennis_No</th>
+      <th id="T_5a776_level0_col1" class="col_heading level0 col1">Play_Tennis_Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_5a776_level0_row0" class="row_heading level0 row0">Temperature_Hot</th>
+      <td id="T_5a776_row0_col0" class="data row0 col0">2/5</td>
+      <td id="T_5a776_row0_col1" class="data row0 col1">2/9</td>
+    </tr>
+    <tr>
+      <th id="T_5a776_level0_row1" class="row_heading level0 row1">Temperature_Mild</th>
+      <td id="T_5a776_row1_col0" class="data row1 col0">2/5</td>
+      <td id="T_5a776_row1_col1" class="data row1 col1">4/9</td>
+    </tr>
+    <tr>
+      <th id="T_5a776_level0_row2" class="row_heading level0 row2">Temperature_Cool</th>
+      <td id="T_5a776_row2_col0" class="data row2 col0">1/5</td>
+      <td id="T_5a776_row2_col1" class="data row2 col1">3/9</td>
+    </tr>
+  </tbody>
+</table>
+<style type="text/css">
+</style>
+<table id="T_6fe55" style="display:inline">
+  <caption>Humidity</caption>
+  <thead>
+    <tr>
+      <th class="blank level0"> </th>
+      <th id="T_6fe55_level0_col0" class="col_heading level0 col0">Play_Tennis_No</th>
+      <th id="T_6fe55_level0_col1" class="col_heading level0 col1">Play_Tennis_Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_6fe55_level0_row0" class="row_heading level0 row0">Humidity_High</th>
+      <td id="T_6fe55_row0_col0" class="data row0 col0">4/5</td>
+      <td id="T_6fe55_row0_col1" class="data row0 col1">3/9</td>
+    </tr>
+    <tr>
+      <th id="T_6fe55_level0_row1" class="row_heading level0 row1">Humidity_Normal</th>
+      <td id="T_6fe55_row1_col0" class="data row1 col0">1/5</td>
+      <td id="T_6fe55_row1_col1" class="data row1 col1">6/9</td>
+    </tr>
+  </tbody>
+</table>
+<style type="text/css">
+</style>
+<table id="T_28a5b" style="display:inline">
+  <caption>Wind</caption>
+  <thead>
+    <tr>
+      <th class="blank level0"> </th>
+      <th id="T_28a5b_level0_col0" class="col_heading level0 col0">Play_Tennis_No</th>
+      <th id="T_28a5b_level0_col1" class="col_heading level0 col1">Play_Tennis_Yes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_28a5b_level0_row0" class="row_heading level0 row0">Wind_Weak</th>
+      <td id="T_28a5b_row0_col0" class="data row0 col0">2/5</td>
+      <td id="T_28a5b_row0_col1" class="data row0 col1">6/9</td>
+    </tr>
+    <tr>
+      <th id="T_28a5b_level0_row1" class="row_heading level0 row1">Wind_Strong</th>
+      <td id="T_28a5b_row1_col0" class="data row1 col0">3/5</td>
+      <td id="T_28a5b_row1_col1" class="data row1 col1">3/9</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above table shows conditional probabilities<br>
+For example $p(\mathrm{outlook}=\mathrm{sunny} \mid \mathrm{play Tennis} = \mathrm{no})$ is given by row <code>outlook_Sunny</code> and column <code>Play_Tennis_No</code> of table <code>Outlook</code> and <br>
+$p(\mathrm{Temperature}=\mathrm{Cool} \mid \mathrm{play Tennis} = \mathrm{Yes})$ is given by row <code>Temperature_Cool</code> and column <code>Play_Tennis_Yes</code> of table <code>Temperature</code> <br>
+Also we can calculate below 2 probabilities of the two classes: <br>
+$P(\mathrm{Play}=\mathrm{Yes})=\frac{9}{14}$<br>
+$P(\mathrm{Play}=\mathrm{No})=\frac{5}{14}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>Form look up table: <br><br>
+  $P\left(\mathrm{Outlook}=\mathrm{Sunny} \mid \mathrm{Play} = \mathrm{Yes} \right) = \frac{2}{9}$ <br>
+  $P\left(\mathrm{Outlook}=\mathrm{Sunny} \mid \mathrm{Play} = \mathrm{No} \right) = \frac{3}{5}$ <br>
+  $P\left(\mathrm{Temperature}=\mathrm{Cool} \mid \mathrm{Play} = \mathrm{Yes} \right) = \frac{3}{9}$ <br>
+  $P\left(\mathrm{Temperature}=\mathrm{Cool} \mid \mathrm{Play} = \mathrm{No} \right) = \frac{1}{5}$<br>
+  $P\left(\mathrm{Humidity}=\mathrm{High  } \mid \mathrm{Play} = \mathrm{Yes} \right) = \frac{3}{9}$ <br>
+  $P\left(\mathrm{Humidity}=\mathrm{High  } \mid \mathrm{Play} = \mathrm{No} \right) = \frac{4}{5}$<br>
+  $P\left(\mathrm{Wind}=\mathrm{Strong    } \mid \mathrm{Play} = \mathrm{Yes} \right) = \frac{3}{9}$ <br>
+  $P\left(\mathrm{Wind}=\mathrm{Strong    } \mid \mathrm{Play} = \mathrm{No} \right) = \frac{3}{5}$<br></p>
+</li>
+<li>
+<p>MAP Rule:<br><br>
+  $P\left(\mathrm{Yes} \mid X\right)= \\
+  P\left(\mathrm{Outlook}=\mathrm{Sunny} \mid \mathrm{Play} = \mathrm{Yes} \right) \times \\
+  P\left(\mathrm{Temperature}=\mathrm{Cool} \mid \mathrm{Play} = \mathrm{Yes} \right) \times \\
+  P\left(\mathrm{Humidity}=\mathrm{High   } \mid \mathrm{Play} = \mathrm{Yes} \right) \times \\
+  P\left(\mathrm{Wind}=\mathrm{Strong } \mid \mathrm{Play} = \mathrm{Yes} \right) \times \\
+  P(\mathrm{Play}=\mathrm{Yes})\\
+  =0.0053 $<br><br>
+  $P\left(\mathrm{No} \mid X\right)= \\
+  P\left(\mathrm{Outlook}=\mathrm{Sunny} \mid \mathrm{Play} = \mathrm{No} \right) \times \\
+  P\left(\mathrm{Temperature}=\mathrm{Cool} \mid \mathrm{Play} = \mathrm{No} \right) \times \\
+  P\left(\mathrm{Humidity}=\mathrm{High   } \mid \mathrm{Play} = \mathrm{No} \right) \times \\
+  P\left(\mathrm{Wind}=\mathrm{Strong } \mid \mathrm{Play} = \mathrm{No} \right) \times \\
+  P(\mathrm{Play}=\mathrm{No}) \\
+  = 0.0206$ <br> <br>
+Since $P(\mathrm{Play}=\mathrm{Yes}) &lt; P(\mathrm{Play}=\mathrm{No})$ so $X$ shall be labeled to be "No", i.e. Given scenario $X$ tennis will not be played.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pros-and-Cons">
+<a class="anchor" href="#Pros-and-Cons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pros and Cons<a class="anchor-link" href="#Pros-and-Cons"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Combines prior knowledge and observed data</li>
+<li>Output is not only a classification but a probability distribution over all classes</li>
+<li>Robust to isolated noise points.</li>
+<li>Handle missing values by ignoring instance during probability estimate calculation.</li>
+<li>Robust to irrelevant attributes.</li>
+<li>with each training example, the prior and the likelihood can be updated dynamically </li>
+<li>Independence assumption may not hold always.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Practical-Issues">
+<a class="anchor" href="#Practical-Issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Practical Issues<a class="anchor-link" href="#Practical-Issues"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Discretize the range into bins<ul>
+<li>One ordinal attribute per bin</li>
+<li>Violates independence assumption</li>
+</ul>
+</li>
+<li>Two way split : (A &lt; v) or (A &lt; v)<ul>
+<li>choose only one of the two splits as new attribute.</li>
+</ul>
+</li>
+<li>Probability density estimation:<ul>
+<li>Assume attribute follows a parametrized distribution, e.g. normal distribution.</li>
+<li>Use data to estimate parameters of distribution, e.g. mean and standard deviation using maximum likelihood estimation.</li>
+<li>Once probability distribution is known, can use it to estimate the conditional probability, $P(A_i \mid c)$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bayesian-Belief-network-(-Bayesian-net-)">
+<a class="anchor" href="#Bayesian-Belief-network-(-Bayesian-net-)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bayesian Belief network ( Bayesian net )<a class="anchor-link" href="#Bayesian-Belief-network-(-Bayesian-net-)"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Describe conditional independence among subset of variables (attributes) : combining prior knowledge about dependencies among variables with observed training data.<br>
+For example consider below graph:<br><br></p>
+<p><img src="/MDS-IIT/images/copied_from_nb/../images/CS5590_images/Acrobat_Q6uR4y3nmf.png" alt=""><br><br></p>
+<p>Here Age, Occupation and Income determine if customer will byt this product, Given that customer buys product, whether there is interest in insurance is now independent of Age, Occupation, Income.<br><br>
+$P\left(\mathrm{Age,Occ,Inc,Buy,Ins}\right)=P(\mathrm{Age})P(\mathrm{Occ})P\left(\mathrm{Inc}\right)P\left(\mathrm{Buy} \mid \mathrm{Age, Occ, Inc}\right)P\left(\mathrm{Int} \mid \mathrm{Buy}\right)$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Naive-Bayes-Classifier-category">
+<a class="anchor" href="#Naive-Bayes-Classifier-category" aria-hidden="true"><span class="octicon octicon-link"></span></a>Naive Bayes Classifier category<a class="anchor-link" href="#Naive-Bayes-Classifier-category"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>It is an Inductive Learning.</li>
+<li>It is a generative Modeling.</li>
+<li>It can be Parametric or Non-parametric Models.</li>
+<li>It can be online or offline Models.</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
 
 

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Support Vector Machines CS5590 week 4 | HOME</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Support Vector Machines CS5590 week 4" />
+<meta name="author" content="Abhishek Kumar Dubey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Foundations of Machine Learning CS5590 week 4" />
+<meta property="og:description" content="Foundations of Machine Learning CS5590 week 4" />
+<link rel="canonical" href="https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/09/10/CS5590-week4.html" />
+<meta property="og:url" content="https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/09/10/CS5590-week4.html" />
+<meta property="og:site_name" content="HOME" />
+<meta property="og:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/CS5590_images/Code_GehOQCy4hw.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-10T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/CS5590_images/Code_GehOQCy4hw.png" />
+<meta property="twitter:title" content="Support Vector Machines CS5590 week 4" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abhishek Kumar Dubey"},"dateModified":"2022-09-10T00:00:00-05:00","datePublished":"2022-09-10T00:00:00-05:00","description":"Foundations of Machine Learning CS5590 week 4","headline":"Support Vector Machines CS5590 week 4","image":"https://abhiyantaabhishek.github.io/MDS-IIT/images/CS5590_images/Code_GehOQCy4hw.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/09/10/CS5590-week4.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/foundations%20of%20machine%20learning/2022/09/10/CS5590-week4.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/MDS-IIT/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhiyantaabhishek.github.io/MDS-IIT/feed.xml" title="HOME" /><link rel="shortcut icon" type="image/x-icon" href="/MDS-IIT/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/MDS-IIT/">HOME</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/MDS-IIT/about/">About Me</a><a class="page-link" href="/MDS-IIT/search/">Search</a><a class="page-link" href="/MDS-IIT/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Support Vector Machines CS5590 week 4</h1><p class="page-description">Foundations of Machine Learning CS5590  week 4</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-10T00:00:00-05:00" itemprop="datePublished">
+        Sep 10, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Abhishek Kumar Dubey</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      13 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/MDS-IIT/categories/#Foundations of Machine Learning">Foundations of Machine Learning</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/abhiyantaabhishek/MDS-IIT/tree/master/_notebooks/2022-09-10-CS5590-week4.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/MDS-IIT/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/abhiyantaabhishek/MDS-IIT/master?filepath=_notebooks%2F2022-09-10-CS5590-week4.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/MDS-IIT/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/abhiyantaabhishek/MDS-IIT/blob/master/_notebooks/2022-09-10-CS5590-week4.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/MDS-IIT/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fabhiyantaabhishek%2FMDS-IIT%2Fblob%2Fmaster%2F_notebooks%2F2022-09-10-CS5590-week4.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/MDS-IIT/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Overview-and-History">Overview and History </a></li>
+<li class="toc-entry toc-h1"><a href="#Maximum-Margin-Classifier">Maximum Margin Classifier </a></li>
+<li class="toc-entry toc-h1"><a href="#Estimate-the-Margin">Estimate the Margin </a></li>
+<li class="toc-entry toc-h1"><a href="#Maximize-the-Margin">Maximize the Margin </a></li>
+<li class="toc-entry toc-h1"><a href="#Using-Lagrange-Multipliers">Using Lagrange Multipliers </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Basics-of-Lagrange-Multipliers">Basics of Lagrange Multipliers </a></li>
+<li class="toc-entry toc-h2"><a href="#SVM-standard-(primal)-form">SVM standard (primal) form </a></li>
+<li class="toc-entry toc-h2"><a href="#SVM-Dual">SVM Dual </a></li>
+<li class="toc-entry toc-h2"><a href="#Solving-using-KKT-condition">Solving using KKT condition </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Soft-Margin-SVM">Soft Margin SVM </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Lagrangian-for-Soft-Margin-SVM">Lagrangian for Soft Margin SVM </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Multi-class-Classification-with-SVMs">Multi-class Classification with SVMs </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-09-10-CS5590-week4.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Overview-and-History">
+<a class="anchor" href="#Overview-and-History" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview and History<a class="anchor-link" href="#Overview-and-History"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>It is a discriminative classifier.</li>
+<li>Inspired by Statistical Learning.</li>
+<li>Developed in 1992 by Vapnik, Guyon, Boser </li>
+<li>Was one of the go-to methods in ML since mid 1990s (only recently displaced by deep learning.)    </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Maximum-Margin-Classifier">
+<a class="anchor" href="#Maximum-Margin-Classifier" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maximum Margin Classifier<a class="anchor-link" href="#Maximum-Margin-Classifier"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Formulation <br><br><ul>
+<li>$f(\mathbf{X},\mathbf{W},b)=\mathrm{sign} (\mathbf{W} \cdot \mathbf{X}+b)$<br><br> 
+<img src="/MDS-IIT/images/copied_from_nb/../images/CS5590_images/Acrobat_vct8kMqVEu.png" alt="">
+</li>
+<li>Basic formulation of SVM can only handle two classes. </li>
+<li>There are improvised method to handle more than tow class.</li>
+<li>The <strong>Maximum margin classifier</strong> is the linear classifier with the maximum margin. This is the simplest kind of SVM ( called an LSVM).</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Estimate-the-Margin">
+<a class="anchor" href="#Estimate-the-Margin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Estimate the Margin<a class="anchor-link" href="#Estimate-the-Margin"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The points those lies on the two margin lines are called support vector.</li>
+<li>The model is immune to removal of any non-support-vector data points.</li>
+<li>The equation of the line  is given by $\mathbf{W}^T \cdot \mathbf{X}+b=0$<br><br>
+<img src="/MDS-IIT/images/copied_from_nb/../images/CS5590_images/Acrobat_nYNJPaG71I.png" alt=""><br>
+</li>
+<li>$\mathbf{W}$ is always normal to the line $\mathbf{W}^T \cdot \mathbf{X}+b=0$<br> 
+This can be proved by taking two vector $\mathbf{X_1}$ and  $\mathbf{X_2}$ on line  $\mathbf{W}^T \cdot \mathbf{X}+b=0$,<br> 
+Now if we subtract the two vector we get $\mathbf{W}^T(\mathbf{X_1}-\mathbf{X_2})=\mathbf{0} \Leftrightarrow  (\mathbf{X_1}-\mathbf{X_2}) \perp \mathbf{W}$. The same is explained on <a href="https://datascience.stackexchange.com/a/49295">stack overflow</a>.</li>
+<li>Dotted line $\mathbf{X'-X}$ is perpendicular to decision boundary so parallel to $\mathbf{W} $ let it's length (magnitude) be $r$</li>
+<li>The Unit vector along Dotted line $\mathbf{X'-X}$ is given by $\frac{\mathit{\mathbf{W}}}{\left\lVert \mathit{\mathbf{W}} \right\rVert }$</li>
+<li>The equation of the dotted line $\mathbf{X'-X}$ can be also given by magnitude multiplied by unit vector : <br>
+$\displaystyle r\cdot \frac{ \mathit{\mathbf{W}}}{\left\lVert \mathit{\mathbf{W}} \right\rVert }$</li>
+<li>But as the dotted line can be on any side of the main line so we need to multiply with $y$, as $y$ takes value of $1$ or $-1$ depending on the side: <br>
+$\displaystyle \mathbf{X'-X} = yr\cdot \frac{ \mathit{\mathbf{W}}}{\left\lVert \mathit{\mathbf{W}} \right\rVert }$<br>
+$\displaystyle \mathbf{X'} = \mathbf{X} - yr\cdot \frac{ \mathit{\mathbf{W}}}{\left\lVert \mathit{\mathbf{W}} \right\rVert }$</li>
+<li>Now since $\mathbf{X'}$ lies on the line so we can write  $\mathbf{W}^T \cdot \mathbf{X'}+b=0$</li>
+<li>Substituting value of $\mathbf{X'}$ in $\mathbf{W}^T \cdot \mathbf{X'}+b=0$ we get: <br>
+$\displaystyle \mathbf{W}^T \cdot \left( \mathbf{X} - yr\cdot \frac{ \mathit{\mathbf{W}}}{\left\lVert \mathit{\mathbf{W}} \right\rVert } \right)+b=0$<br><br>
+</li>
+<li>substituting $\displaystyle \left\lVert \mathit{\mathbf{W}} \right\rVert =\sqrt{\mathit{\mathbf{W}}^T \mathit{\mathbf{W}}}$ in above equation we get: <br>
+$\displaystyle \mathbf{W}^T \cdot \left( \mathbf{X} - yr\cdot \frac{ \mathit{\mathbf{W}}}{\sqrt{\mathit{\mathbf{W}}^T \mathit{\mathbf{W}}}} \right)+b=0$<br><br>
+$\displaystyle  \left(  \mathbf{W}^T \mathbf{X} -   yr\cdot \frac{ \mathit{\mathbf{W}}^T\mathit{\mathbf{W}}}{\sqrt{\mathit{\mathbf{W}}^T \mathit{\mathbf{W}}}} \right)+b=0$<br><br>
+$\displaystyle  \left(  \mathbf{W}^T \mathbf{X} -   yr\cdot \sqrt{\mathit{\mathbf{W}}^T \mathit{\mathbf{W}}} \right)+b=0$<br><br>
+$\displaystyle    \mathbf{W}^T \mathbf{X} -   yr\cdot \left\lVert \mathit{\mathbf{W}} \right\rVert  +b=0$<br><br>
+$\displaystyle    \mathbf{W}^T \mathbf{X}  +b =  yr\cdot \left\lVert \mathit{\mathbf{W}} \right\rVert$<br><br>
+$\displaystyle    r = \frac{\mathbf{W}^T \mathbf{X}  +b}{y\cdot \left\lVert \mathit{\mathbf{W}} \right\rVert}$<br><br>
+</li>
+<li>
+<p>Since $y$ takes value of only $1$ or $-1$, hence we can bring $y$ to numerator. <br></p>
+<p>$\displaystyle    r = y \frac{\mathbf{W}^T \mathbf{X}  +b}{\left\lVert \mathit{\mathbf{W}} \right\rVert}$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Since $\mathbf{W}^T \cdot \mathbf{X}+b=0$ and $c\left(\mathbf{W}^T \cdot \mathbf{X}\right)+b=0$ define the same plane, we have the freedom to choose the normalization of $\mathbf{W}$ </li>
+<li>Let us choose normalization such that $\mathbf{W}^T \cdot \mathbf{X}_+ + b = +1$  and $\mathbf{W}^T \cdot \mathbf{X}_- +b = -1$ for the positive and negative support vectors respectively.<br><br>
+<img src="/MDS-IIT/images/copied_from_nb/../images/CS5590_images/Acrobat_AwymHLT9aY.png" alt=""><br><br>
+Hence, Margin now is: <br><br>
+$\displaystyle  \left( +1 \right) \frac{\mathbf{W}^T \mathbf{X_+} +b}{ \left\lVert \mathit{\mathbf{W}} \right\rVert} +  \left( -1 \right) \frac{\mathbf{W}^T \mathbf{X_-} +b}{ \left\lVert \mathit{\mathbf{W}} \right\rVert}$<br><br>
+Since $\mathbf{W}^T \mathbf{X_+} +b=+1$ and $\mathbf{W}^T \mathbf{X_-} +b=-1$, substituting these  in above equation we get: <br><br>
+$\displaystyle  \left( +1 \right) \frac{\mathbf{W}^T \mathbf{X_+} +b}{ \left\lVert \mathit{\mathbf{W}} \right\rVert} +  \left( -1 \right) \frac{\mathbf{W}^T \mathbf{X_-} +b}{ \left\lVert \mathit{\mathbf{W}} \right\rVert}=\displaystyle  \left( +1 \right) \frac{+1}{ \left\lVert \mathit{\mathbf{W}} \right\rVert} +  \left( -1 \right) \frac{-1}{ \left\lVert \mathit{\mathbf{W}} \right\rVert}=\frac{2}{\left\lVert \mathbf{W}\right\rVert}$<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash flash-success">
+    <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
+    <strong>Tip: </strong><br>Margin between the two support vector is   given  by: $$\displaystyle    \frac{2}{\left\lVert \mathbf{W}\right\rVert}$$
+</div>
+<br><br>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Maximize-the-Margin">
+<a class="anchor" href="#Maximize-the-Margin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maximize the Margin<a class="anchor-link" href="#Maximize-the-Margin"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Now we know the margin between the two support vector.</li>
+<li>We need to maximize the margin in such a way that $+1$ class points lies on one side of the margin and $-1$ class points lies on the other side of the margin.</li>
+<li>We can formulate this as the <em>quadratic optimization problem</em>:<br>
+Find $\mathbf{W}$ such that <br> <br>
+$ \displaystyle \rho = \frac{2}{\left\lVert \mathbf{W}\right\rVert } $ is maximized; and for all $\left\{ \left( \mathbf{X}_i,\mathbf{y}_i \right) \right\}$<br> <br>
+and $\mathbf{W}^T \cdot \mathbf{X}_i+b \ge 1$ if $y_i=+1$<br> <br>
+and $\mathbf{W}^T \cdot \mathbf{X}_i+b \le -1$ if $y_i=-1$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A better formulation is to minimize inverse of $\rho$ instead of maximizing it.</p>
+<ul>
+<li>We know that <br>
+$ \displaystyle  \max \frac{2}{\left\lVert \mathbf{W}\right\rVert } =\min  \frac{\left\lVert \mathbf{W}\right\rVert}{2} =\min\frac{\sqrt{ \mathbf{W}^T\mathbf{W}}}{2} $<br>
+</li>
+<li>Instead of minimizing  $ \displaystyle  \frac {\left\lVert \mathbf{W}\right\rVert}{2}$ we minimize $ \displaystyle  \frac {\left\lVert \mathbf{W}\right\rVert^2}{2}$ or $\displaystyle  \frac{ \mathbf{W}^T\mathbf{W}}{2}$ as both are equivalent. we select later as math (derivative) becomes easy.<br>
+<div class="flash flash-success">
+    <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
+    <strong>Tip: </strong>Maximization problem can be written in terms of minimization as follows:<br><br>Find $\mathbf{W}$ and $b$ such that<br><br>$\displaystyle \frac{\mathbf{W}^T\mathbf{W}}{2}$ is minimized.<br><br>and for all  $\left\{ \left( \mathbf{X}_i,\mathbf{y}_i \right) \right\} : \displaystyle y_i\left( \mathbf{W}^T\mathbf{X}_i +b\right) \ge 1$<br>
+</div>
+<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Using-Lagrange-Multipliers">
+<a class="anchor" href="#Using-Lagrange-Multipliers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Lagrange Multipliers<a class="anchor-link" href="#Using-Lagrange-Multipliers"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basics-of-Lagrange-Multipliers">
+<a class="anchor" href="#Basics-of-Lagrange-Multipliers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basics of Lagrange Multipliers<a class="anchor-link" href="#Basics-of-Lagrange-Multipliers"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Optimization problem:<br>
+<strong>Minimize</strong> : $\displaystyle f\left( \overrightarrow{x}  \right)$ <br>
+<strong>Such that</strong> for all $i,$ $\displaystyle g_i\left( \overrightarrow{x}  \right)\le 0$ <br>
+</li>
+<li>To solve the above problem we create augmented Lagrange function:<br><br>
+$\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right):=f\left( \overrightarrow{x}  \right)+\sum_{i=i}^{n}\lambda_ig_i\left( \overrightarrow{x}  \right)$ <br><br>
+$\displaystyle \underbrace{L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right)}_{\text{lagrange function}} :=f\left( \overrightarrow{x}  \right)+\sum_{i=i}^{n}\underbrace{\lambda_i}_{\text{lagrange variable  or dual varialbe }}g_i \left( \overrightarrow{x}  \right)$ <br><br>
+</li>
+<li>Observation:<br>
+For any feasible $x$ and all $\lambda_i \ge 0$,  <br><br>
+$\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right):=f\left( \overrightarrow{x}  \right)+\overbrace{\sum_{i=i}^{n}\overbrace{\lambda_i}^{\text{this is positve}} \underbrace{g_i\left( \overrightarrow{x}  \right)}_{\text{this is negative}}}^{\text{This is negative}}  $ <br><br>
+Hence , $\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) \le f\left( \overrightarrow{x}  \right)$ <br>
+$\displaystyle \Longrightarrow \max_{\lambda_i \ge 0} L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) \le f\left( \overrightarrow{x}  \right)$ <br><br>
+</li>
+<li>So, the optimal value to the constrained optimization:<br><br>
+$\displaystyle p^*:=\min_{\overrightarrow{x} } \max_{\lambda_i \ge 0} L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) $ <br><br>
+We can see that now problem becomes unconstrained in $x$ <br>
+Also $p^*$ is called <strong>The primal</strong> problem<br><br>
+</li>
+<li>Observation:<br>
+consider a function: $\displaystyle \min_{\overrightarrow{x} }  L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) $<br>
+Since   $p^*$ is solution for maximum possible $\lambda$ so for any feasible $x$ and all $\lambda_i \ge 0$<br><br>
+$\displaystyle p^* \ge \min_{\overrightarrow{x} }  L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) $ <br>
+Thus:<br><br>
+$\displaystyle d^*:= \max_{\lambda_i \ge 0} \min_{\overrightarrow{x} } L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) \le p^*$ <br><br>
+Also $d^*$ is called <strong>The dual</strong> problem<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In short:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong><br><br><strong>Optimization problem</strong>:<br><em>Minimize</em> : $\displaystyle f\left( \overrightarrow{x}  \right)$ <br><em>Such that</em> for all $i,$ $\displaystyle g_i\left( \overrightarrow{x}  \right)\le 0$ <br><em>Lagrange Function</em> : $\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right):=f\left( \overrightarrow{x}  \right)+\sum_{i=i}^{n}\lambda_ig_i\left( \overrightarrow{x}  \right)$ <br><br> <strong>Primal</strong>: $\displaystyle p^*:=\min_{\overrightarrow{x} } \max_{\lambda_i \ge 0} L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) $ <br><br><strong>Dual</strong>: $\displaystyle d^*:= \max_{\lambda_i \ge 0} \min_{\overrightarrow{x} } L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) $ <br><br>
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>Theorem (weak Lagrangian duality):<br><br>
+$d^* \le p^*$<br><br>
+This is also called as minimax inequality<br><br>
+$p^*-d^*$ is called duality gap<br><br></p>
+</li>
+<li>
+<p>There are certain condition when duality gap becomes zero, for that we need to understand convexity</p>
+<ul>
+<li>A function $f:\mathbb{R}^d \rightarrow \mathbb{R} $ is called convex iff for any two point $x$ and $x'$ and $\beta \in \left[ 0,1 \right]$<br><br>
+$f\left( \beta\overrightarrow{x}+\left( 1-\beta \right)\overrightarrow{x}   \right) \le \beta f\left( \overrightarrow{x}  \right)+\left( 1-\beta \right)f\left( \overrightarrow{x}  \right)$<br><br>
+<img src="/MDS-IIT/images/copied_from_nb/../images/CS5590_images/Acrobat_9xAcM49wbq.png" alt=""><br><br>
+</li>
+<li>A set $S \subset\mathbb{R}^d $ is called conved iff for any tow points  $x, x' \in S$ and any  $\beta \in \left[ 0,1 \right]$<br><br>
+$\beta \overrightarrow{x}+\left( 1-\beta \right)\overrightarrow{x} \in S $<br><br>
+<img src="/MDS-IIT/images/copied_from_nb/../images/CS5590_images/Acrobat_4WENH5ng1n.png" alt=""><br><br>
+</li>
+<li>Convex Optimization problem <br><br>
+$\displaystyle \min_{\overrightarrow{x} \in \mathbb{R}^d } f\left( \overrightarrow{x}  \right)$ <br><br>
+subject to: $\displaystyle g_i\left( \overrightarrow{x}  \right)\le 0$ for $1 \le i \le n$<br><br>
+is called convex optimization problem if:<br><ul>
+<li>The objective function $f\left( \overrightarrow{x}  \right)$ is convex function, and</li>
+<li>the feasible set induced by the constraints $g_i$ is a convex set.<br><br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Theorem (strong Lagrangian duality):<br><br>
+if $f$ is convex and for a feasible point $x^*$<br><br>
+$g_i\left( \overrightarrow{x^*}  \right)&lt;0$, or <br><br>
+$g_i\left( \overrightarrow{x^*}  \right) \le 0$ when $g$ is affine<br><br>
+Then $d^*=p^*$<br><br>
+This is called Slater's condition. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SVM-standard-(primal)-form">
+<a class="anchor" href="#SVM-standard-(primal)-form" aria-hidden="true"><span class="octicon octicon-link"></span></a>SVM standard (primal) form<a class="anchor-link" href="#SVM-standard-(primal)-form"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\displaystyle \min_{w,b}\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 $ <br><br>
+such that: $\forall$ $i,$ $y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) \ge 1$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Observations :<ul>
+<li>Objective function is <em>convex</em>
+</li>
+<li>the constraints are <em>affine</em>, inducing a polytope constraint set.</li>
+</ul>
+</li>
+<li>So SVM is a convex optimization problem (in fact a quadratic program)</li>
+<li>Moreover, <strong>strong duality holds</strong>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Lagrangian for SVM<ul>
+<li>For Lagrangian the constraint should always  written as less than $0$ condition: <br><br>
+$y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) -1 \ge 0$ <br><br>
+$- y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) +1 \le 0$ <br><br>
+$ 1 - y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) \le 0$ <br><br>
+</li>
+<li>Now the Lagrangian for SVM can be written as:<br><br>
+$\displaystyle L\left( \overrightarrow{w},b,\overrightarrow{\alpha}   \right)=\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 + \underbrace{\sum_{i = 1}^{n}\alpha_i\left( 1-y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right)}_{\text{also known as hinge loss}}   $<br><br>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SVM-Dual">
+<a class="anchor" href="#SVM-Dual" aria-hidden="true"><span class="octicon octicon-link"></span></a>SVM Dual<a class="anchor-link" href="#SVM-Dual"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Primal<br><br>
+$\displaystyle \min_{\overrightarrow{w},b }\max_{\overrightarrow{\alpha } \ge 0 }\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 + \sum_{i = 1}^{n}\alpha_i\left( 1-y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right)  $<br><br>
+</li>
+<li>Dual<br><br>
+$\displaystyle\max_{\overrightarrow{\alpha } \ge 0 } \min_{\overrightarrow{w},b }\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 + \sum_{i = 1}^{n}\alpha_i\left( 1-y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right)   $<br><br>
+</li>
+<li>Slater's condition from convex optimization guarantees that these two optimization problems are equivalent!</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solving-using-KKT-condition">
+<a class="anchor" href="#Solving-using-KKT-condition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solving using KKT condition<a class="anchor-link" href="#Solving-using-KKT-condition"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>KKT stands for Karush-Kuhn-Tucker Condition</p>
+<ul>
+<li>We solve Dual problem:<br><br>
+$\displaystyle\max_{\overrightarrow{\alpha } \ge 0 } \min_{\overrightarrow{w},b }\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 + \sum_{i = 1}^{n}\alpha_i\left( 1-y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right)   $<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>We can solve for optimal $w$, $b$ as function of $\alpha$<br><br>
+$\displaystyle \frac{\partial L }{\partial \overrightarrow{w}}=  w - \sum_{i}\alpha_iy_i\overrightarrow{x}_i=0 \Rightarrow w  =  \sum_{i}\alpha_iy_i\overrightarrow{x}_i $<br><br>
+$\displaystyle \frac{\partial L }{\partial b}=  \sum_{i}\alpha_iy_i=0 \Rightarrow  \sum_{i}\alpha_iy_i =0$<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>substituting these values back in Dual we get: <br><br>
+$\displaystyle \max_{\overrightarrow{\alpha } \ge 0 }  \frac{1}{2} \left( \sum_{i}\alpha_iy_i\overrightarrow{x}_i  \right) \cdot \left( \sum_{j}\alpha_jy_j\overrightarrow{x}_j \right) + \sum_{i = 1}^{n}\alpha_i\left( 1-y_i\left( \sum_{j}\alpha_jy_j\overrightarrow{x}_j \cdot\overrightarrow{x_i}+b   \right) \right)   $<br><br>
+$\displaystyle \max_{\overrightarrow{\alpha } \ge 0 } \frac{1}{2} \sum_{i,j}\alpha_i\alpha_jy_iy_j\overrightarrow{x}_i\cdot\overrightarrow{x} _j  + \sum_{i = 1}^{n}\alpha_i-\sum_{i = 1}^{n}  \left(     \alpha_iy_i\left( \sum_{j}\alpha_jy_j\overrightarrow{x} _j\cdot\overrightarrow{x_i}+b   \right) \right)   $<br><br>
+$\displaystyle \max_{\overrightarrow{\alpha } \ge 0 } \frac{1}{2} \sum_{i,j}\alpha_i\alpha_jy_iy_j\overrightarrow{x}_i\cdot\overrightarrow{x} _j  + \sum_{i = 1}^{n}\alpha_i- \sum_{i = 1}^{n}\alpha_iy_i\sum_{j}\alpha_jy_j\overrightarrow{x} _j\cdot\overrightarrow{x_i}+  \sum_{i = 1}^{n}\alpha_iy_ib      $<br><br>
+$\displaystyle \max_{\overrightarrow{\alpha } \ge 0 } -\frac{1}{2} \sum_{i,j}\alpha_i\alpha_jy_iy_j\overrightarrow{x}_i\cdot\overrightarrow{x} _j  + \sum_{i = 1}^{n}\alpha_i +  \sum_{i = 1}^{n}\alpha_iy_ib      $<br><br>
+$\displaystyle \max_{\overrightarrow{\alpha } \ge 0 } \sum_{i = 1}^{n}\alpha_i  -\frac{1}{2} \sum_{i,j}\alpha_i\alpha_jy_iy_j\overrightarrow{x}_i\cdot\overrightarrow{x} _j  $<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The above equation can also be written as: <br><br>
+$\displaystyle \max \sum_{k = 1}^{R}\alpha_k  - \frac{1}{2}\sum_{k=1}^{R}\sum_{l = 1}^{R}\alpha_k \alpha_l Q_{kl}, $ where $\displaystyle Q_{kl} =y_ky_l\left( \mathbf{X_k}\cdot \mathbf{X_l} \right)$<br><br>
+subject to constrains:<br><br>$\alpha_k \ge 0,$ and $\forall k , $ $\displaystyle \sum_{k=1}^{R}\alpha_ky_k=0$<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Above problem can be solved using SMO (Sequential minimal optimization) or any other quadratic programming or gradient descent. </li>
+<li>Once we solve we get optimum $\alpha^*$</li>
+<li>Using  $\alpha^*$   we can get $w^*$ as below:<br><br>
+$\displaystyle  w^*  =  \sum_{i}\alpha_i^*y_i\overrightarrow{x}_i $<br><br>
+</li>
+<li>$b^*$ can be calculated as follows:<br><br>
+$y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i}   +b \right) = 1$ <br><br>
+$y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right) +  y_ib = 1$ <br><br>
+$y_i y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right) +  y_i y_ib = y_i$ <br><br>
+$y_i y_ib = y_i -y_i y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right) $ <br><br>
+$b = y_i \left( 1-  y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right)  \right)$ <br><br>
+$b^* = - y_i \left( y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right)- 1  \right)$ <br><br> </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Now we can classify with:<br><br>
+$f(\mathbf{X},\mathbf{W}^*,b^*)=\mathrm{sign} (\mathbf{W}^* \cdot \mathbf{X}+b^*)$<br><br> </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Soft-Margin-SVM">
+<a class="anchor" href="#Soft-Margin-SVM" aria-hidden="true"><span class="octicon octicon-link"></span></a>Soft Margin SVM<a class="anchor-link" href="#Soft-Margin-SVM"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Till now what we discussed is called Hard margin SVM.</li>
+<li>In practice data is not always separable</li>
+<li>We allow misclassification of the data point in soft margin SVM.</li>
+<li>Soft margin SVM is also called as C-SVM</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>Now our Lagrangian is formulated as below:<br><br>
+$\displaystyle \min_{w,b,\varepsilon}\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 + c \sum_{j=1}^{N}\varepsilon_j  $  <br><br>
+such that: $\forall$ $i,$ $y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) \ge 1-\varepsilon _i$, and $\varepsilon _i\ge0$ <br><br></p>
+</li>
+<li>
+<p>Significance of $\varepsilon$<br><br></p>
+<ul>
+<li>$\displaystyle \min_{w,b,\varepsilon}\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 + \overbrace{c}^{\text{Controls amount of misclassification}}  \underbrace{\sum_{j=1}^{N}\varepsilon_j }_{\text{Minimize }\varepsilon \text{ also  } }  $<br><br> 
+such that: $\forall$ $i,$ $y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) \ge 1-\underbrace{\varepsilon _i}_{\text{to allow misclassification}} ,$ and $\overbrace{\varepsilon _i\ge0}^{\text{keep } \varepsilon \text{ positive} } $ <br><br> </li>
+<li>$\varepsilon_i \ge 1 \Longleftrightarrow y_i \left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) &lt; 0,$ i.e., misclassification.</li>
+<li>$0&lt;\varepsilon_i &lt; 1 \Longleftrightarrow  x_i$ is correctly classified, but lies inside the margin</li>
+<li>$\varepsilon_i =0 \Longleftrightarrow  x_i$ is correctly classified, and lies outside of margin</li>
+<li>$\sum_{j=1}^{N}\varepsilon_j$ is an upper bound on training errors.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lagrangian-for-Soft-Margin-SVM">
+<a class="anchor" href="#Lagrangian-for-Soft-Margin-SVM" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lagrangian for Soft Margin SVM<a class="anchor-link" href="#Lagrangian-for-Soft-Margin-SVM"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>We need to Solve:<br><br>
+$\displaystyle \min_{w,b,\varepsilon}\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 + c \sum_{i=1}\varepsilon_i  $  <br><br>
+such that: $\forall$ $i,$ $y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) \ge 1-\varepsilon _i$, and $\varepsilon _i\ge0$ <br><br>
+</li>
+<li>For Lagrangian the constraint should always  written as less than $0$ condition: <br><br>
+$y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) \ge 1-\varepsilon _i$, and $\varepsilon _i\ge0$ <br><br>
+$y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) - 1 + \varepsilon _i \ge 0$, and $-\varepsilon _i \le 0$ <br><br>
+$1 - \varepsilon _i  -y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) \le 0$, and $-\varepsilon _i \le 0$ <br><br>
+</li>
+<li>Lagrangian formulation of above problem:<br><br>
+$\displaystyle L\left( \overrightarrow{w},b,\overrightarrow{\alpha},\overrightarrow{\beta},\overrightarrow{\varepsilon }     \right)=\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 +c\sum_{i}\varepsilon_i + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Primal<br><br>
+$\displaystyle  \min_{\overrightarrow{w},b,\overrightarrow{\varepsilon } }\max_{\overrightarrow{\alpha } \ge 0 ,\overrightarrow{\beta} \ge 0}\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 +c\sum_{i}\varepsilon_i + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
+</li>
+<li>Dual<br><br>
+$\displaystyle  \max_{\overrightarrow{\alpha } \ge 0 , \overrightarrow{\beta} \ge 0} \min_{\overrightarrow{w},b,\overrightarrow{\varepsilon } }\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 +c\sum_{i}\varepsilon_i + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Same as Hard margin SVM we use KKT condition and solve minimization of dual:<br><br>
+ $\displaystyle \frac{\partial L }{\partial \overrightarrow{w}}=  w - \sum_{i}\alpha_iy_i\overrightarrow{x}_i=0 \Rightarrow w  =  \sum_{i}\alpha_iy_i\overrightarrow{x}_i $<br><br>
+$\displaystyle \frac{\partial L }{\partial b}=  \sum_{i}\alpha_iy_i=0 \Rightarrow  \sum_{i}\alpha_iy_i =0$<br><br>
+$\displaystyle \frac{\partial L }{\partial \varepsilon _i}= c -\alpha_i  - \beta_i = 0\Rightarrow  c=\beta_i+\alpha_i$<br><br><ul>
+<li>Observation:<br><br>
+$\overbrace{c}^{\text{Upper bound of }\alpha \text{ and }\beta} =\underbrace{\beta_i}_{\text{always +ve}} +\underbrace{\alpha_i}_{\text{always +ve}}$<br><br>
+so we can say: $0 \le \alpha_i \le c$ $ \forall i$<br><br>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>substituting these values back in Dual we get: <br><br>
+$\displaystyle \Rightarrow   \max_{\overrightarrow{\alpha } \ge 0 , \overrightarrow{\beta} \ge 0} \frac{1}{2}\left( \sum_{i}\alpha_iy_i\overrightarrow{x}_i  \right) \cdot \left( \sum_{j}\alpha_jy_j\overrightarrow{x}_j \right) +\sum_{i}\varepsilon_i\left( \beta_i+\alpha_i \right) + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \sum_{j}\alpha_jy_j\overrightarrow{x}_j \cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
+$\displaystyle \Rightarrow \max_{\overrightarrow{\alpha } \ge 0 , \overrightarrow{\beta} \ge 0} \frac{1}{2}\left( \sum_{i}\alpha_iy_i\overrightarrow{x}_i  \right) \cdot \left( \sum_{j}\alpha_jy_j\overrightarrow{x}_j \right) +\sum_{i}\varepsilon_i \beta_i+\sum_{i}\varepsilon_i  \alpha_i  +  \sum_{i = 1}^{n}\alpha_i - \sum_{i = 1}^{n}\alpha_i \varepsilon _i - \sum_{i = 1}^{n}\alpha_i y_i\left( \sum_{j}\alpha_jy_j\overrightarrow{x}_j \cdot\overrightarrow{x_i}+b   \right)  -\sum_{i}\beta_i \varepsilon_i  $<br><br>
+$\displaystyle \Rightarrow \max_{\overrightarrow{\alpha } \ge 0 , \overrightarrow{\beta} \ge 0} \frac{1}{2} \sum_{i}\alpha_i \alpha_j y_i y_j \overrightarrow{x}_i \overrightarrow{x}_j   +\sum_{i}\varepsilon_i \beta_i+\sum_{i}\varepsilon_i  \alpha_i  +  \sum_{i = 1}^{n}\alpha_i - \sum_{i = 1}^{n}\alpha_i \varepsilon _i - \sum_{i = 1}^{n}\alpha_i y_i \sum_{j}\alpha_jy_j\overrightarrow{x}_j \cdot\overrightarrow{x_i}+  \sum_{i = 1}^{n}\alpha_i y_ib     -\sum_{i}\beta_i \varepsilon_i  $<br><br>
+$\displaystyle \Rightarrow \max_{\overrightarrow{\alpha } \ge 0 } \frac{1}{2} \sum_{i}\alpha_i \alpha_j y_i y_j \overrightarrow{x}_i \overrightarrow{x}_j     +  \sum_{i = 1}^{n}\alpha_i  - \sum_{i = 1}^{n}\alpha_i y_i \sum_{j}\alpha_jy_j\overrightarrow{x}_j \cdot\overrightarrow{x_i}+  \sum_{i = 1}^{n}\alpha_i y_ib    $<br><br>
+$\displaystyle \Rightarrow \max_{\overrightarrow{\alpha } \ge 0 } \frac{1}{2} \sum_{i}\alpha_i \alpha_j y_i y_j \overrightarrow{x}_i \overrightarrow{x}_j     +  \sum_{i = 1}^{n}\alpha_i  - \sum_{i=1,j=1}^{n}\alpha_i \alpha_j y_i  y_j \overrightarrow{x_i} \cdot \overrightarrow{x_j}+  \sum_{i = 1}^{n}\alpha_i y_ib    $<br><br>
+$\displaystyle \Rightarrow \max_{\overrightarrow{\alpha } \ge 0 } \sum_{i = 1}^{n}\alpha_i  -\frac{1}{2} \sum_{i}\alpha_i \alpha_j y_i y_j \overrightarrow{x}_i \overrightarrow{x}_j     $<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<strong>Notice neither $\overrightarrow{\beta}$ nor $\overrightarrow{\varepsilon }$ appears in the above equation</strong>.<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The above equation  can also be written as: <br><br>
+$\displaystyle \max \sum_{k = 1}^{R}\alpha_k  - \frac{1}{2}\sum_{k=1}^{R}\sum_{l = 1}^{R}\alpha_k \alpha_l Q_{kl}, $ where $\displaystyle Q_{kl} =y_ky_l\left( \mathbf{X_k}\cdot \mathbf{X_l} \right)$<br><br>
+subject to constrains:<br><br>$0 \le \alpha_k \le c,$ and $\forall k , $ $\displaystyle \sum_{k=1}^{R}\alpha_ky_k=0$<br><br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>One of the constraint of soft margin SVM is $0 \le \alpha_k \le c$ which is different for hard margin SVM constraint $\alpha_k \ge 0$
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Multi-class-Classification-with-SVMs">
+<a class="anchor" href="#Multi-class-Classification-with-SVMs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multi-class Classification with SVMs<a class="anchor-link" href="#Multi-class-Classification-with-SVMs"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>SVM can handle only tow-class outputs.</li>
+<li>what to do for multi-class case:<ul>
+<li>one vs all SVM<ul>
+<li>Learn N SVMs</li>
+<li>SVM 1 learns class $1$ vs not class $1$</li>
+<li>SVM 2 learns class $2$ vs not class $2$ and so on.</li>
+<li>Then to predict the output for a new point, just predict with each SVM and fond out which one puts the prediction the furthest into the positive region.</li>
+</ul>
+</li>
+<li>Other approaches:<ul>
+<li>pair-wise SVM</li>
+<li>Tree-structured SVM</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="abhiyantaabhishek/MDS-IIT"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/MDS-IIT/foundations%20of%20machine%20learning/2022/09/10/CS5590-week4.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/MDS-IIT/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/MDS-IIT/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/MDS-IIT/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Home page contains all the posts date wise whereas Tag Page contains the same category wise.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/abhiyantaabhishek" target="_blank" title="abhiyantaabhishek"><svg class="svg-icon grey"><use xlink:href="/MDS-IIT/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/abhishek-kumar-dubey-585a86179" target="_blank" title="abhishek-kumar-dubey-585a86179"><svg class="svg-icon grey"><use xlink:href="/MDS-IIT/assets/minima-social-icons.svg#linkedin"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
