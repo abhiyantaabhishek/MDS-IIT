@@ -339,7 +339,7 @@ and $\mathbf{W}^T \cdot \mathbf{X}_i+b \le -1$ if $y_i=-1$</li>
 <li>We know that <br>
 $ \displaystyle  \max \frac{2}{\left\lVert \mathbf{W}\right\rVert } =\min  \frac{\left\lVert \mathbf{W}\right\rVert}{2} =\min\frac{\sqrt{ \mathbf{W}^T\mathbf{W}}}{2} $<br>
 </li>
-<li>Instead of minimizing  $ \displaystyle  \frac {\left\lVert \mathbf{W}\right\rVert}{2}$ we minimize $ \displaystyle  \frac {\left\lVert \mathbf{W}\right\rVert^2}{2}$ or $\displaystyle  \frac{ \mathbf{W}^T\mathbf{W}}{2}$ as both are equivalent. we select later as math (derivative) becomes easy.<br>
+<li>Instead of minimizing  $ \displaystyle  \frac {\left\lVert \mathbf{W}\right\rVert}{2}$ we minimize $ \displaystyle  \frac {\left\lVert \mathbf{W}\right\rVert^2}{2} = \displaystyle  \frac{ \mathbf{W}^T\mathbf{W}}{2}  $   as both (with or without square)   are equivalent. we select square one  as math (derivative) becomes easy.<br>
 <div class="flash flash-success">
     <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
     <strong>Tip: </strong>Maximization problem can be written in terms of minimization as follows:<br><br>Find $\mathbf{W}$ and $b$ such that<br><br>$\displaystyle \frac{\mathbf{W}^T\mathbf{W}}{2}$ is minimized.<br><br>and for all  $\left\{ \left( \mathbf{X}_i,\mathbf{y}_i \right) \right\} : \displaystyle y_i\left( \mathbf{W}^T\mathbf{X}_i +b\right) \ge 1$<br>
@@ -378,12 +378,12 @@ $ \displaystyle  \max \frac{2}{\left\lVert \mathbf{W}\right\rVert } =\min  \frac
 <strong>Such that</strong> for all $i,$ $\displaystyle g_i\left( \overrightarrow{x}  \right)\le 0$ <br>
 </li>
 <li>To solve the above problem we create augmented Lagrange function:<br><br>
-$\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right):=f\left( \overrightarrow{x}  \right)+\sum_{i=i}^{n}\lambda_ig_i\left( \overrightarrow{x}  \right)$ <br><br>
-$\displaystyle \underbrace{L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right)}_{\text{lagrange function}} :=f\left( \overrightarrow{x}  \right)+\sum_{i=i}^{n}\underbrace{\lambda_i}_{\text{lagrange variable  or dual varialbe }}g_i \left( \overrightarrow{x}  \right)$ <br><br>
+$\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right):=f\left( \overrightarrow{x}  \right)+\sum_{i=1}^{n}\lambda_ig_i\left( \overrightarrow{x}  \right)$ <br><br>
+$\displaystyle \underbrace{L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right)}_{\text{lagrange function}} :=f\left( \overrightarrow{x}  \right)+\sum_{i=1}^{n}\underbrace{\lambda_i}_{\text{lagrange variable  or dual varialbe }}g_i \left( \overrightarrow{x}  \right)$ <br><br>
 </li>
 <li>Observation:<br>
 For any feasible $x$ and all $\lambda_i \ge 0$,  <br><br>
-$\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right):=f\left( \overrightarrow{x}  \right)+\overbrace{\sum_{i=i}^{n}\overbrace{\lambda_i}^{\text{this is positve}} \underbrace{g_i\left( \overrightarrow{x}  \right)}_{\text{this is negative}}}^{\text{This is negative}}  $ <br><br>
+$\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right):=f\left( \overrightarrow{x}  \right)+\overbrace{\sum_{i=1}^{n}\overbrace{\lambda_i}^{\text{this is positve}} \underbrace{g_i\left( \overrightarrow{x}  \right)}_{\text{this is negative}}}^{\text{This is negative}}  $ <br><br>
 Hence , $\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) \le f\left( \overrightarrow{x}  \right)$ <br>
 $\displaystyle \Longrightarrow \max_{\lambda_i \ge 0} L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) \le f\left( \overrightarrow{x}  \right)$ <br><br>
 </li>
@@ -419,7 +419,7 @@ Also $d^*$ is called <strong>The dual</strong> problem<br><br>
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong><br><br><strong>Optimization problem</strong>:<br><em>Minimize</em> : $\displaystyle f\left( \overrightarrow{x}  \right)$ <br><em>Such that</em> for all $i,$ $\displaystyle g_i\left( \overrightarrow{x}  \right)\le 0$ <br><em>Lagrange Function</em> : $\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right):=f\left( \overrightarrow{x}  \right)+\sum_{i=i}^{n}\lambda_ig_i\left( \overrightarrow{x}  \right)$ <br><br> <strong>Primal</strong>: $\displaystyle p^*:=\min_{\overrightarrow{x} } \max_{\lambda_i \ge 0} L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) $ <br><br><strong>Dual</strong>: $\displaystyle d^*:= \max_{\lambda_i \ge 0} \min_{\overrightarrow{x} } L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) $ <br><br>
+    <strong>Note: </strong><br><br><strong>Optimization problem</strong>:<br><em>Minimize</em> : $\displaystyle f\left( \overrightarrow{x}  \right)$ <br><em>Such that</em> for all $i,$ $\displaystyle g_i\left( \overrightarrow{x}  \right)\le 0$ <br><em>Lagrange Function</em> : $\displaystyle L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right):=f\left( \overrightarrow{x}  \right)+\sum_{i=1}^{n}\lambda_ig_i\left( \overrightarrow{x}  \right)$ <br><br> <strong>Primal</strong>: $\displaystyle p^*:=\min_{\overrightarrow{x} } \max_{\lambda_i \ge 0} L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) $ <br><br><strong>Dual</strong>: $\displaystyle d^*:= \max_{\lambda_i \ge 0} \min_{\overrightarrow{x} } L\left( \overrightarrow{x},\overrightarrow{\lambda}   \right) $ <br><br>
 </div>
 
 </div>
@@ -508,13 +508,13 @@ such that: $\forall$ $i,$ $y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Lagrangian for SVM<ul>
-<li>For Lagrangian the constraint should always  written as less than $0$ condition: <br><br>
+<li>For Lagrangian the constraint should always  written as less than $0$ format: <br><br>
 $y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) -1 \ge 0$ <br><br>
 $- y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) +1 \le 0$ <br><br>
 $ 1 - y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) \le 0$ <br><br>
 </li>
 <li>Now the Lagrangian for SVM can be written as:<br><br>
-$\displaystyle L\left( \overrightarrow{w},b,\overrightarrow{\alpha}   \right)=\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 + \underbrace{\sum_{i = 1}^{n}\alpha_i\left( 1-y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right)}_{\text{also known as hinge loss}}   $<br><br>
+$\displaystyle L\left( \overrightarrow{w},b,\overrightarrow{\alpha}   \right)=\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 + \underbrace{\sum_{i = 1}^{n}\alpha_i\left( 1-y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right)}_{\text{appears like a hinge loss}}   $<br><br>
 </li>
 </ul>
 </li>
@@ -624,8 +624,10 @@ $\displaystyle  w^*  =  \sum_{i}\alpha_i^*y_i\overrightarrow{x}_i $<br><br>
 <li>$b^*$ can be calculated as follows:<br><br>
 $y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i}   +b \right) = 1$ <br><br>
 $y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right) +  y_ib = 1$ <br><br>
+Multiplying $y_i$ both the sides: <br><br>
 $y_i y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right) +  y_i y_ib = y_i$ <br><br>
 $y_i y_ib = y_i -y_i y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right) $ <br><br>
+$y_i y_i b$ can be written as $b$ because $y_i$ can be only $\pm 1$ so in either case $y_i y_i =1$<br><br>
 $b = y_i \left( 1-  y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right)  \right)$ <br><br>
 $b^* = - y_i \left( y_i\left( \overrightarrow{w}^* \cdot \overrightarrow{x_i} \right)- 1  \right)$ <br><br> </li>
 </ul>
@@ -714,7 +716,7 @@ $y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) - 1 + \vare
 $1 - \varepsilon _i  -y_i\left( \overrightarrow{w}\cdot \overrightarrow{x_i}   +b \right) \le 0$, and $-\varepsilon _i \le 0$ <br><br>
 </li>
 <li>Lagrangian formulation of above problem:<br><br>
-$\displaystyle L\left( \overrightarrow{w},b,\overrightarrow{\alpha},\overrightarrow{\beta},\overrightarrow{\varepsilon }     \right)=\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 +c\sum_{i}\varepsilon_i + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
+$\displaystyle L\left( \overrightarrow{w},b,\overrightarrow{\alpha},\overrightarrow{\beta},\overrightarrow{\varepsilon }     \right)= \\ \frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 +c\sum_{i}\varepsilon_i + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
 </li>
 </ul>
 
@@ -726,10 +728,10 @@ $\displaystyle L\left( \overrightarrow{w},b,\overrightarrow{\alpha},\overrightar
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Primal<br><br>
-$\displaystyle  \min_{\overrightarrow{w},b,\overrightarrow{\varepsilon } }\max_{\overrightarrow{\alpha } \ge 0 ,\overrightarrow{\beta} \ge 0}\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 +c\sum_{i}\varepsilon_i + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
+$\displaystyle  \min_{ \left(  \overrightarrow{w},b,\overrightarrow{\varepsilon } \right)}\max_{\left(  \overrightarrow{\alpha } \ge 0 ,\overrightarrow{\beta} \ge 0  \right)}\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 +c\sum_{i}\varepsilon_i + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
 </li>
 <li>Dual<br><br>
-$\displaystyle  \max_{\overrightarrow{\alpha } \ge 0 , \overrightarrow{\beta} \ge 0} \min_{\overrightarrow{w},b,\overrightarrow{\varepsilon } }\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 +c\sum_{i}\varepsilon_i + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
+$\displaystyle  \max_{\left( \overrightarrow{\alpha } \ge 0 , \overrightarrow{\beta} \ge 0  \right)} \min_{\left( \overrightarrow{w},b,\overrightarrow{\varepsilon }  \right)}\frac{1}{2}\left\lVert \overrightarrow{w} \right\rVert^2 +c\sum_{i}\varepsilon_i + \sum_{i = 1}^{n}\alpha_i\left( 1- \varepsilon _i - y_i\left( \overrightarrow{w}\cdot\overrightarrow{x_i}+b   \right) \right) -\sum_{i}\beta_i \varepsilon_i  $<br><br>
 </li>
 </ul>
 
@@ -879,7 +881,8 @@ subject to constrains:<br><br>$0 \le \alpha_k \le c,$ and $\forall k , $ $\displ
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>But if the data can't be separated linearly we transform the data to higher dimension space using the transformation $\phi$. So that the data can be separated using a hyper-plane in higher dimension space. In that case the above equation changes as below : <br>
-$\displaystyle \max \sum_{k = 1}^{R}\alpha_k  - \frac{1}{2}\sum_{k=1}^{R}\sum_{l = 1}^{R}\alpha_k \alpha_l Q_{kl}, $ where $\displaystyle Q_{kl} =y_ky_l\left( \underbrace{\mathbf{\phi \left(  X_k \right)}\cdot \mathbf{\phi  \left( X_l \right)}}_{\text{Notice the term } \phi }  \right)$<br><br>
+$\displaystyle \max \sum_{k = 1}^{R}\alpha_k  - \frac{1}{2}\sum_{k=1}^{R}\sum_{l = 1}^{R}\alpha_k \alpha_l Q_{kl}, $ where 
+$\displaystyle Q_{kl} =y_ky_l \underbrace{\left(\mathbf{\Phi} \left(  \mathbf{X}_k \right)\cdot \mathbf{\Phi}  \left( \mathbf{X}_l \right)\right)}_{\text{Notice the term } \Phi } $<br><br>
 subject to constrains:<br><br>$0 \le \alpha_k \le c,$ and $\forall k , $ $\displaystyle \sum_{k=1}^{R}\alpha_ky_k=0$<br><br>
 </li>
 </ul>
@@ -915,10 +918,10 @@ $\mathbf{X} \rightarrow \mathbf{\Phi}(\mathbf{X})$</li>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Notice that in the term $ Q_{kl} =y_ky_l\left( \mathbf{\phi \left(  X_k \right)}\cdot \mathbf{\phi  \left( X_l \right)} \right)$ we must do $\frac{R^2}{2}$ dot products to get this matrix ready.<br><br>
+<li>Notice that in the term $\displaystyle Q_{kl} =y_ky_l \left(\mathbf{\Phi} \left(  \mathbf{X}_k \right)\cdot \mathbf{\Phi}  \left( \mathbf{X}_l \right)\right) $ we must do $\frac{R^2}{2}$ dot products to get this matrix ready.<br><br>
 Assuming a quadratic polynomial kernel, each dot product requires $\frac{m^2}{2}$ addition and multiplication ( where $m$ is the dimension of $X$) <br><br>
 The whole thing costs $\frac{R^2m^2}{4}$<br><br>
-This is the reason we require a trick so that we need to this large computation.</li>
+This is the reason we require a trick so that we need not do this large computation.</li>
 </ul>
 
 </div>
