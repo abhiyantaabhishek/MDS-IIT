@@ -14,14 +14,14 @@
 <link rel="canonical" href="https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science/2022/09/17/CS6660-week4.html" />
 <meta property="og:url" content="https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science/2022/09/17/CS6660-week4.html" />
 <meta property="og:site_name" content="HOME" />
-<meta property="og:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/CS6660_images/2022-08-13-CS6660-week2-preview.jpg" />
+<meta property="og:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/CS6660_images/chrome_pPYR2UCfXR.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-09-17T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/CS6660_images/2022-08-13-CS6660-week2-preview.jpg" />
+<meta property="twitter:image" content="https://abhiyantaabhishek.github.io/MDS-IIT/images/CS6660_images/chrome_pPYR2UCfXR.png" />
 <meta property="twitter:title" content="Probability Mass Function CS6660 week 4" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abhishek Kumar Dubey"},"dateModified":"2022-09-17T00:00:00-05:00","datePublished":"2022-09-17T00:00:00-05:00","description":"Mathematical Foundations of Data Science CS6660 week 4","headline":"Probability Mass Function CS6660 week 4","image":"https://abhiyantaabhishek.github.io/MDS-IIT/images/CS6660_images/2022-08-13-CS6660-week2-preview.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science/2022/09/17/CS6660-week4.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science/2022/09/17/CS6660-week4.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Abhishek Kumar Dubey"},"dateModified":"2022-09-17T00:00:00-05:00","datePublished":"2022-09-17T00:00:00-05:00","description":"Mathematical Foundations of Data Science CS6660 week 4","headline":"Probability Mass Function CS6660 week 4","image":"https://abhiyantaabhishek.github.io/MDS-IIT/images/CS6660_images/chrome_pPYR2UCfXR.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science/2022/09/17/CS6660-week4.html"},"url":"https://abhiyantaabhishek.github.io/MDS-IIT/mathematical%20foundations%20of%20data%20science/2022/09/17/CS6660-week4.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/MDS-IIT/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhiyantaabhishek.github.io/MDS-IIT/feed.xml" title="HOME" /><link rel="shortcut icon" type="image/x-icon" href="/MDS-IIT/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -100,7 +100,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      11 min read
     
 </span></p>
 
@@ -120,15 +120,20 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h1"><a href="#Bernoulli,-Binomial">Bernoulli, Binomial </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Mass-Function">Mass Function </a></li>
 <li class="toc-entry toc-h2"><a href="#Expectation--$\displaystyle-EX-=np-$">Expectation  $\displaystyle EX =np $ </a></li>
 <li class="toc-entry toc-h2"><a href="#Variance--$\displaystyle-\mathrm{Var}-X--=--np(1-p)$">Variance  $\displaystyle \mathrm{Var} X  =  np(1-p)$ </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Poisson">Poisson </a>
+<li class="toc-entry toc-h1"><a href="#poisson--">Poisson  </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Expectation--$\displaystyle-EX-=\lambda-$">Expectation  $\displaystyle EX =\lambda $ </a></li>
 <li class="toc-entry toc-h2"><a href="#Variance--$\displaystyle-\mathrm{Var}-X--=-\lambda$">Variance  $\displaystyle \mathrm{Var} X  = \lambda$ </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Geometric">Geometric </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Expectation--$\displaystyle-EX-=\frac{1}{p}-$">Expectation  $\displaystyle EX =\frac{1}{p} $ </a></li>
+<li class="toc-entry toc-h2"><a href="#Variance--$\displaystyle-\mathrm{Var}-X--=-\frac{1-p}{p^2}-$">Variance  $\displaystyle \mathrm{Var} X  = \frac{1-p}{p^2} $ </a></li>
 </ul>
 </li>
 </ul><!--
@@ -216,15 +221,6 @@ $\displaystyle p\left(i\right)=P\left\lbrace X=i\right\rbrace = {n \choose i} \t
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Mass-Function">
-<a class="anchor" href="#Mass-Function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mass Function<a class="anchor-link" href="#Mass-Function"> </a>
-</h2>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -403,9 +399,10 @@ $\displaystyle \mathrm{Var}X = \mathrm{Var}\left( \sum_{i=1}^n Y_i \right) =  \s
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Poisson">
-<a class="anchor" href="#Poisson" aria-hidden="true"><span class="octicon octicon-link"></span></a>Poisson<a class="anchor-link" href="#Poisson"> </a>
+<h1>
+<a class="anchor" href="#poisson--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Poisson  <br><br>
 </h1>
+
 </div>
 </div>
 </div>
@@ -562,6 +559,139 @@ $\displaystyle \mathrm{Var}X = E(X^2)-(EX)^2$<br><br>
 $\displaystyle \mathrm{Var}X = E\left[X(X-1)\right] +EX-(EX)^2$<br><br>
 $\displaystyle \mathrm{Var}X = \lambda^2 +\lambda-\lambda^2$<br><br>
 $\displaystyle \mathrm{Var}X = \lambda$<br><br>  </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Geometric">
+<a class="anchor" href="#Geometric" aria-hidden="true"><span class="octicon octicon-link"></span></a>Geometric<a class="anchor-link" href="#Geometric"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Definition <br>
+Suppose that independent trials, each succeeding with probability $p$, are repeated until the first success. The total number $X$ of trials made has the $\mathrm{Geometric}(p)$ distribution (in short, $X \sim \mathrm{Geom}(p)$). <br>
+$X$ can take on positive integers, with probabilities <br><br>
+$\boxed{ \displaystyle  \rho(i) = (1-p)^{i-1} \cdot p}$ $\;\;\;\;\; i=1,2,3,\dots$<br><br>
+That is a function, we verify by $\rho(i) \ge 0$ and <br><br>
+$\displaystyle \sum_{i=1}^\infty \rho(i) = \sum_{i=1}^\infty (1-p)^{i-1} \cdot p = \frac{p}{1-(1-p)}=1$<br><br>
+</li>
+<li>Remarks <br>
+For a Geometric$(p)$ random variable and any $k \ge 1$ we have <br>
+$P \left\{ X \ge k \right\}=(1-p)^{k-1}$ (We have at least $k-1$ failures).</li>
+<li>Corollary <br>
+The Geometric random variable is (discrete) memory-less :for every $k \ge 1 , n \ge 0$<br><br>
+$\displaystyle  P \left\{ X \ge n + k \mid X&gt;n  \right\}=P \left\{ X \ge k \right\}$<br><br>
+Proof : <br>
+$\displaystyle  P \left\{ X \ge n + k \mid X&gt;n  \right\}= \frac {P\left\{ X \ge n + k \right\} \cap P\left\{X&gt;n  \right\}}{P\left\{X&gt;n  \right\}}$<br>
+if $X \ge n+k$ then $X$ is also greater than $n$ as $k$ is at least $1$<br>
+$\displaystyle  P \left\{ X \ge n + k \mid X&gt;n  \right\}= \frac {P\left\{ X \ge n + k \right\} }{P\left\{X&gt;n  \right\}}$<br>
+$\displaystyle  P \left\{ X \ge n + k \mid X&gt;n  \right\}= \frac {(1-p)^{n+k-1} }{(1-p)^n}= (1-p)^{k-1}=P \left\{ X&gt;k  \right\}$<br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Expectation--$\displaystyle-EX-=\frac{1}{p}-$">
+<a class="anchor" href="#Expectation--%24%5Cdisplaystyle-EX-=%5Cfrac%7B1%7D%7Bp%7D-%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>Expectation  $\displaystyle EX =\frac{1}{p} $<a class="anchor-link" href="#Expectation--%24%5Cdisplaystyle-EX-=%5Cfrac%7B1%7D%7Bp%7D-%24"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$ \boxed {EX = \frac{1}{p}}$<br><br><ul>
+<li>proof (using trick): <br><br>
+Trick : $\displaystyle i=\frac{d}{dt}^{i}{\Big|}_{t=1}\,$ <br><br>
+$\displaystyle EX =  \sum_{i=1}^\infty i \cdot  (1-p)^{i-1} \cdot p$ <br><br>
+$\displaystyle EX =  \sum_{i=0}^\infty \frac{d}{dt}{t}^{i}{\Big|}_{t=1}   (1-p)^{i-1} \cdot p$ <br><br>
+$\displaystyle EX =  \frac{d}{dt} \left( \sum_{i=0}^\infty {t}^{i}   (1-p)^{i-1} \cdot p \right)  {\Bigg|}_{t=1}$<br><br>
+$\displaystyle EX =  \frac{d}{dt} \left( \frac{p}{1-p}\sum_{i=0}^\infty {t}^{i}   (1-p)^{i}  \right)  {\Bigg|}_{t=1}$<br><br>
+$\displaystyle EX =  \frac{p}{1-p} \cdot \frac{d}{dt} \left(   \frac{1}{1-t(1-p)}   \right)  {\Bigg|}_{t=1}$<br><br>
+$\displaystyle EX =  \frac{p}{1-p} \cdot  \left(   \frac{1-p}{\left(1-t(1-p)\right)^2}   \right)  {\Bigg|}_{t=1}$<br><br>
+$\displaystyle EX =  \frac{1}{p}$</li>
+<li>Proof (normal way):<br><br>
+$\displaystyle EX =  \sum_{i=1}^\infty i \cdot  (1-p)^{i-1} \cdot p$ <br><br>
+$\displaystyle EX \;\;\;\;\;\;\;\;\;\;\;=  p + 2 \cdot (1-p)\cdot p + 3 \cdot (1-p)^2 \cdot  p \;\dots  \; \; \; \; \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; (1)$<br><br>
+$\displaystyle EX(1-p) = \;\;\;\;\;\;\;\;\;\;\; (1-p)\cdot p + 2 \cdot (1-p)^2\cdot p + 3 \cdot (1-p)^3 \cdot  p \;\dots  \; \; \; \; \; (2)$<br><br>
+Subtracting equation $(1)$ from $(2)$ we get <br><br>
+$\displaystyle p \cdot EX = p +  (1-p)\cdot p + (1-p)^2 \cdot p \;\dots $<br><br>
+$\displaystyle  EX = 1 +  (1-p) + (1-p)^2  \;\dots $<br><br>
+$\displaystyle EX = \frac{1}{1-(1-p)}$<br><br>
+$\displaystyle EX = \frac{1}{p}$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Variance--$\displaystyle-\mathrm{Var}-X--=-\frac{1-p}{p^2}-$">
+<a class="anchor" href="#Variance--%24%5Cdisplaystyle-%5Cmathrm%7BVar%7D-X--=-%5Cfrac%7B1-p%7D%7Bp%5E2%7D-%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variance  $\displaystyle \mathrm{Var} X  = \frac{1-p}{p^2} $<a class="anchor-link" href="#Variance--%24%5Cdisplaystyle-%5Cmathrm%7BVar%7D-X--=-%5Cfrac%7B1-p%7D%7Bp%5E2%7D-%24"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$ \boxed {\mathrm{Var} X = \frac{1-p}{p^2}}$ <br><br><ul>
+<li>Proof (using trick);<br><br>
+Trick : $\displaystyle i(i-1)=\frac{d}{dt^2}^{i}{\Big|}_{t=1}\,$ <br><br>
+First find $E[X(X-1)]$<br><br>
+$\displaystyle E[X(X-1)] =\sum_{i=1}^\infty  i\times(i-1)   \times (1-p)^{i-1} \times p $ <br><br><br>
+$\displaystyle E[X(X-1)] =\sum_{i=1}^\infty  \frac{d}{dt^2}{t}^{i}{\Big|}_{t=1}   \times (1-p)^{i-1} \times p $ <br><br><br>
+$\displaystyle E[X(X-1)] =p \frac{d}{dt^2} \left( \sum_{i=1}^\infty{t}^{i}(1-p)^{i-1} \right) {\Bigg|}_{t=1} $ <br><br><br>
+$\displaystyle E[X(X-1)] = \frac{p}{1-p} \cdot \frac{d}{dt^2} \left( \sum_{i=1}^\infty{t}^{i}(1-p)^{i} \right) {\Bigg|}_{t=1} $ <br><br><br>
+$\displaystyle E[X(X-1)] = \frac{p}{1-p} \cdot \frac{d}{dt^2} \left( \frac{1}{1-t(1-p)} \right) {\Bigg|}_{t=1} $ <br><br> 
+$\displaystyle E[X(X-1)] = \frac{p}{1-p} \cdot  \left( \frac{2(1-p)(1-p)}{(\left( 1-t(1-p) \right)^3 } \right) {\Bigg|}_{t=1} $ <br><br> 
+$\displaystyle E[X(X-1)] = \frac{p}{1-p} \cdot  \left( \frac{2(1-p)(1-p)}{p^3 } \right) $ <br><br> 
+$\displaystyle E[X(X-1)] =  \left( \frac{2(1-p)}{p^2 } \right) $ <br><br>
+Now, <br><br>
+$\displaystyle \mathrm{Var}X = E(X^2)-(EX)^2$<br><br>
+$\displaystyle \mathrm{Var}X = E\left[X(X-1)\right] +EX-(EX)^2$<br><br><br>
+$\displaystyle \mathrm{Var}X = \left( \frac{2(1-p)}{p^2 } \right) + \frac{1}{p} -\left( \frac{1}{p} \right)^2$<br><br><br>
+$\displaystyle \mathrm{Var}X = \left( \frac{2-2p}{p^2 } \right) + \frac{1}{p} -\left( \frac{1}{p} \right)^2$<br><br> 
+$\displaystyle \mathrm{Var}X = \frac{2-2p+p-1}{p^2}$<br><br> 
+$\displaystyle \mathrm{Var}X = \frac{1-p}{p^2}$<br><br> </li>
+<li>proof (normal way):<br><br> 
+we first solve for $E(X^2)$<br><br> 
+$\displaystyle  E(X^2) = \left( \sum_{i=1}^\infty  i^2   \times (1-p)^{i-1} \times p \right)$ <br><br> 
+$\displaystyle  E(X^2) \;\;\;\;\;\;\;\;\;\;\;= p + 4 \cdot (1-p) \cdot p + 9 \cdot (1-p)^2 \cdot p  \;\; \dots \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; (3)$ 
+<br><br> 
+$\displaystyle (1-p) E(X^2) = \;\;\;\;\;\;\;\;\;\;\;(1-p) \cdot p + 4 \cdot (1-p)^2 \cdot p + 9 \cdot (1-p)^3 \cdot p \;\; \dots \;\; (4)$ 
+<br><br><br>
+subtracting eqution $(4)$ from equation $(3)$     <br><br><br>
+$\displaystyle E(X^2) = p+3 \cdot (1-p) + 5 \cdot (1-p)^2 + 7 \cdot (1-p)^3 \; \dots$<br><br> 
+This is AGP, the sum is given by $s_{\infty}=\frac{a}{1-r}+\frac{dr}{(1-r)^2}, \;\;\;\;$ for $r&lt;1$<br><br> 
+In our case $r=(1-p),\;a=1,\;d=2\;$ so we get, <br><br> 
+$\displaystyle E(X^2) =\frac{1}{1-(1-p)}+\frac{2\cdot (1-p)}{(1-(1-p))^2}$<br><br> 
+$\displaystyle E(X^2) =\frac{1}{p}+\frac{2-2p}{p^2}$<br><br> 
+$\displaystyle E(X^2) =\frac{p+2-2p}{p^2}$<br><br> 
+$\displaystyle E(X^2) =\frac{2-p}{p^2}$<br><br> 
+$\displaystyle  \mathrm{Var}X = E(X^2) - (EX)^2$ <br><br> 
+$\displaystyle  \mathrm{Var}X = \frac{2-p}{p^2} - \left(\frac{1}{p}\right)^2$ <br><br> 
+$\displaystyle  \mathrm{Var}X = \frac{1-p}{p^2} $ <br><br> </li>
+</ul>
+</li>
 </ul>
 
 </div>
