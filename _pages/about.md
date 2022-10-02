@@ -3,22 +3,10 @@ layout: page
 title: About Me 
 permalink: /abhishek_resume/
 ---
+{{site.url}}
 <object 
-    data="../_pages/about.pdf" 
-    width="100%" 
-    height="2350" 
-    type='application/pdf'
->
-<iframe
-    src="../_pages/about.pdf" 
-    width="100%"
-    height="2350"
-    style="border: none;"
->
-		<p>
-			Your browser does not support PDFs viewer.
-			<a href="../_pages/about.pdf">Download the PDF</a>
-			.
-		</p>
+    width="900" 
+    height="900" 
+    data="https://docs.google.com/gview?embedded=true&url=https://abhiyantaabhishek.github.io/MDS-IIT/_pages/about.pdf">
 </object>
-<br><br>
+
