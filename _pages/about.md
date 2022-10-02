@@ -6,11 +6,7 @@ permalink: /abhishek_resume/
 <html>
 <head>
 <style>  
-body {
-  height: 50%;
-  width: 75%;
-  background-color: powderblue;
-}
+
 </style>
 </head>
 <body>
