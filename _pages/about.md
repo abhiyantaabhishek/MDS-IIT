@@ -1,11 +1,8 @@
 ---
 layout: page
-title: About Me
-permalink: /about/
+title: About Me 
+permalink: /abhishek_resume/
 ---
-
-I am an M.tech Student at IIT Hyderabad, Also working as Senior Data Scientist at Bosch. 
-
 <object 
     data="../_pages/about.pdf" 
     width="100%" 
@@ -24,3 +21,4 @@ I am an M.tech Student at IIT Hyderabad, Also working as Senior Data Scientist a
 			.
 		</p>
 </object>
+<br><br>
